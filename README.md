@@ -41,6 +41,8 @@ The feedback and survey module is designed to gather patient insights and improv
 In summary, the CampusCare web application for the IIUM Clinic integrates essential functionalities into a cohesive system. Each module is designed to address specific operational needs, ensuring that the clinic can provide high-quality care while maintaining efficient administrative processes. By combining these features, CampusCare enhances both the patient experience and the clinic's overall efficiency.
 
 ERD
+![erd](https://github.com/user-attachments/assets/88961f7b-bffd-427b-a50b-2d8c89de48d1)
+
 
 SEQUENCE DIAGRAM
 
