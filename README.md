@@ -21,6 +21,25 @@ OBJECTIVES
 
 FEATURES & FUNCTIONALITIES
 
+The CampusCare web application for the IIUM Clinic is designed to enhance the clinic's operations by integrating several key modules. Each module focuses on specific aspects of clinic management, providing a comprehensive and user-friendly system. Below is a detailed description of the features and functionalities of each module:
+
+Booking Appointment System (Alifah)
+The booking appointment system is designed to streamline the process of scheduling appointments for both patients and clinic staff. Key features include a robust search and filter functionality that allows users to find appointments by doctor, date, or patient name. The booking interface is user-friendly, enabling patients to easily select a doctor, date, time, and reason for their visit. A visual calendar view provides a clear overview of all booked appointments, helping both patients and staff keep track of schedules. Additionally, the system includes a notification feature that sends email or SMS reminders to patients about their upcoming appointments, reducing the likelihood of missed appointments. Admins have the ability to manage appointments efficiently, with options to view, edit, cancel, or reschedule as necessary.
+
+Medical Record Management (Nisa)
+The medical record management module ensures that all patient information is organized and easily accessible. Each patient has a detailed profile that includes their medical history and personal information. The system provides a comprehensive list of medical records, which can be searched and filtered based on various criteria. Admins can view detailed records, add new entries, edit existing ones, or delete records as needed. The system also supports the uploading and viewing of attachments, such as medical images, lab results, and other relevant documents. Additionally, there is a dedicated section for doctor's notes, where detailed consultation notes can be recorded and accessed.
+
+Billing and Payment System (Miraz)
+The billing and payment system is designed to handle all financial transactions efficiently. It features automatic invoice generation for services rendered, ensuring that all billing information is accurate and up-to-date. The system integrates with various payment gateways to facilitate online payments, providing a convenient option for patients. Detailed billing history is maintained for each patient, allowing both patients and clinic staff to review past transactions. The system also sends payment reminders to patients, helping to ensure timely payments. Additionally, it allows for the application of discounts and the management of insurance claims, making the billing process smoother and more flexible.
+
+Clinic Information and News (Rabia)
+The clinic information and news module serves as a communication hub for the clinic. It provides detailed information about the clinic, including the services offered and contact details. A dedicated section for news and updates keeps patients informed about the latest developments and announcements from the clinic. The events calendar displays information about upcoming events and health camps, encouraging patient participation. A blog section features articles and health tips written by clinic staff, providing valuable information to patients. The module also includes user engagement features, such as the ability to comment on and share news posts, fostering a sense of community.
+
+Feedback/Survey (Hakim)
+The feedback and survey module is designed to gather patient insights and improve the clinic's services. A feedback form allows patients to submit their suggestions and comments easily. Admins can create and manage surveys to gather specific patient insights, helping to identify areas for improvement. The system includes tools for analyzing feedback and survey responses, providing valuable data to the clinic staff. Reports can be generated based on this data, offering actionable insights that can be used to enhance patient care and overall clinic operations.
+
+In summary, the CampusCare web application for the IIUM Clinic integrates essential functionalities into a cohesive system. Each module is designed to address specific operational needs, ensuring that the clinic can provide high-quality care while maintaining efficient administrative processes. By combining these features, CampusCare enhances both the patient experience and the clinic's overall efficiency.
+
 ERD
 
 SEQUENCE DIAGRAM
