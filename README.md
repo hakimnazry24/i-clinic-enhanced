@@ -9,16 +9,16 @@ TEAM MEMBERS
 
 Project Title:
 
-#**INTRODUCTION**
+# **INTRODUCTION**
 
 The IIUM Sejahtera Clinic website is designed to facilitate healthcare delivery and offer a more convenient service to the students, staffs and patients. Previously, patients needed to walk in and often waited for long periods to receive treatment. Patients were also challenged to obtain timely information, such as about doctors' unavailability. Moreover, patient data was not recorded correctly since they had to do so through Google forms without a procedure to record the history of treatments for a subsequent use.This website aims to address these challenges. It consists of a clinically relevant, web-based scheduling and appointment which is accessible to patients for booking, rescheduling, and cancelling appointments. An effective medical record management system, which will secure access and update for patients as well as clinic staff. The website will have a billing and payment system in order to facilitate payment of bills easily, and it will ensure the timely information concerning the operations of clinic, hours of operation, and news. The aim of this project is to optimize clinic work processes as well as decrease waiting times and provide a more structured, reliable health service.
 
-#**OBJECTIVES**
+# **OBJECTIVES**
 - To streamline appointment booking by providing a user-friendly online platform for patients to book, reschedule, or cancel appointments.
 - To have an efficient medical record management by implementing a secure system for storing, updating, and accessing patient medical records for both patients and healthcare providers.
 - To ensure data security and privacy by using a secure technologies to protect patient data and comply with healthcare regulations.
 
-#**FEATURES & FUNCTIONALITIES**
+# **FEATURES & FUNCTIONALITIES**
 
 The CampusCare web application for the IIUM Clinic is designed to enhance the clinic's operations by integrating several key modules. Each module focuses on specific aspects of clinic management, providing a comprehensive and user-friendly system. Below is a detailed description of the features and functionalities of each module:
 
@@ -39,13 +39,13 @@ The feedback and survey module is designed to gather patient insights and improv
 
 In summary, the CampusCare web application for the IIUM Clinic integrates essential functionalities into a cohesive system. Each module is designed to address specific operational needs, ensuring that the clinic can provide high-quality care while maintaining efficient administrative processes. By combining these features, CampusCare enhances both the patient experience and the clinic's overall efficiency.
 
-#**ERD**
+# **ERD**
 ![erd](https://github.com/user-attachments/assets/88961f7b-bffd-427b-a50b-2d8c89de48d1)
 
 
-#**SEQUENCE DIAGRAM**
+# **SEQUENCE DIAGRAM**
 
-#**REFERENCE**
+# **REFERENCE**
 
 
 
