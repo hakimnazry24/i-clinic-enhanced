@@ -1,5 +1,3 @@
-# project-web-app-laravel
-
 # IIUM e-Clinic: Your Digital Healthcare Solution
 
 ## **TEAM MEMBERS**
