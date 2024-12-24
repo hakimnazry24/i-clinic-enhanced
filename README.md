@@ -110,6 +110,8 @@ In summary, the i-Clinic web application for the IIUM Clinic integrates essentia
 ![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/13.jpg) -->
 
 # **REFERENCE**
-KPJ. (2024). Kpjhealth.com.my. https://www.kpjhealth.com.my/events
+1. Da Fonseca et. al. (2021). E-Health Practices and Technologies: A Systematic Review from 2014 to 2019. Healthcare, 9(9), 1192. https://doi.org/10.3390/healthcare9091192
+2. Halamka, J. (2022, March 16). The Digital Reconstruction of Healthcare is Upon Us - Mayo Clinic Platform. Mayo Clinic Platform. https://www.mayoclinicplatform.org/2021/06/11/the-digital-reconstruction-of-healthcare-is-upon-us
+3. KPJ. (2024). Kpjhealth.com.my. https://www.kpjhealth.com.my/events
 
 ‌
