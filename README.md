@@ -67,11 +67,7 @@ In summary, the CampusCare web application for the IIUM Clinic integrates essent
 ![6](https://github.com/user-attachments/assets/bab2c395-f8a2-46bd-b209-e95adeee364d)
 ![7](https://github.com/user-attachments/assets/4fd914a4-b19b-49b9-9e23-bce5b00d15ec)
 
-## **Contact Us page**
-
-![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/3.jpg)
-
-## **Upcoming Event page**
+## **Information and News page**
 
 ![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/4.jpg)
 
@@ -86,6 +82,10 @@ In summary, the CampusCare web application for the IIUM Clinic integrates essent
 ## **Medical Record Management page**
 
 ![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/7.jpg)
+
+## **Feedback page**
+
+![10](https://github.com/user-attachments/assets/2381298f-8ab2-4e8b-9d15-26314f0ec647)
 
 
 <!-- ## **Login page**
