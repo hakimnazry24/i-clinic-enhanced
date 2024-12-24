@@ -20,7 +20,7 @@ The i-Clinic website is designed to facilitate healthcare delivery and offer a m
 
 # **FEATURES & FUNCTIONALITIES**
 
-The CampusCare web application for the IIUM Clinic is designed to enhance the clinic's operations by integrating several key modules. Each module focuses on specific aspects of clinic management, providing a comprehensive and user-friendly system. Below is a detailed description of the features and functionalities of each module:
+The i-Clinic web application for the IIUM Clinic is designed to enhance the clinic's operations by integrating several key modules. Each module focuses on specific aspects of clinic management, providing a comprehensive and user-friendly system. Below is a detailed description of the features and functionalities of each module:
 
 **Booking Appointment System** (Alifah)
 
@@ -42,7 +42,7 @@ The CampusCare web application for the IIUM Clinic is designed to enhance the cl
 
 - The feedback and survey module is designed to gather patient insights and improve the clinic's services. A feedback form allows patients to submit their suggestions and comments easily. Admins can create and manage surveys to gather specific patient insights, helping to identify areas for improvement. The system includes tools for analyzing feedback and survey responses, providing valuable data to the clinic staff. Reports can be generated based on this data, offering actionable insights that can be used to enhance patient care and overall clinic operations.
 
-In summary, the CampusCare web application for the IIUM Clinic integrates essential functionalities into a cohesive system. Each module is designed to address specific operational needs, ensuring that the clinic can provide high-quality care while maintaining efficient administrative processes. By combining these features, CampusCare enhances both the patient experience and the clinic's overall efficiency.
+In summary, the i-Clinic web application for the IIUM Clinic integrates essential functionalities into a cohesive system. Each module is designed to address specific operational needs, ensuring that the clinic can provide high-quality care while maintaining efficient administrative processes. By combining these features, CampusCare enhances both the patient experience and the clinic's overall efficiency.
 
 # **ERD**
 
