@@ -43,7 +43,7 @@ In summary, the CampusCare web application for the IIUM Clinic integrates essent
 
 
 # **SEQUENCE DIAGRAM**
-![sequence_diagram](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/laravel_project_webapp.jpg)
+![sequence_diagram]([https://github.com/hakimnazry24/project-web-app-laravel/blob/main/laravel_project_webapp.jpg](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/laravel_project_webapp%20(1).jpg))
 
 
 # **REFERENCE**
