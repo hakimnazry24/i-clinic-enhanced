@@ -1,4 +1,5 @@
 # project-web-app-laravel
+# IIUM e-Clinic: Your Digital Healthcare Solution
 
 ## **TEAM MEMBERS**
 1. MUHAMMAD HAKIM BIN MD NAZRI 2110457
@@ -6,8 +7,6 @@
 3. KHAIRUNNISA BINTI ABDULLAH 2212506
 4. RABIATUL ADAWIYAH BINTI ROHANY 2213530
 5. NUR ALIFAH ILYANA BINTI MOHD ZAMAN 2217466
-
-# IIUM e-Clinic: Your Digital Healthcare Solution
 
 # **INTRODUCTION**
 
