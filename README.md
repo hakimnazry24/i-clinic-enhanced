@@ -62,6 +62,9 @@ In summary, the i-Clinic web application for the IIUM Clinic integrates essentia
 
 ![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/2.jpg)
 
+## **Home page**
+![3](https://github.com/user-attachments/assets/0f036632-bade-48a2-87a1-a2cdfd5e0187)
+
 ## **Book Appointment page**
 
 ![6](https://github.com/user-attachments/assets/bab2c395-f8a2-46bd-b209-e95adeee364d)
@@ -71,6 +74,13 @@ In summary, the i-Clinic web application for the IIUM Clinic integrates essentia
 
 ![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/4.jpg)
 
+## **Medical Record Management page**
+
+![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/7.jpg)
+
+## **Feedback page**
+![WAD mockup](https://github.com/user-attachments/assets/c4a83648-0e2c-46f4-b26c-dff104b829f3)
+
 ## **Billing History page**
 
 ![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/5.jpg)
@@ -79,12 +89,8 @@ In summary, the i-Clinic web application for the IIUM Clinic integrates essentia
 
 ![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/6.jpg)
 
-## **Medical Record Management page**
 
-![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/7.jpg)
 
-## **Feedback page**
-![WAD mockup](https://github.com/user-attachments/assets/c4a83648-0e2c-46f4-b26c-dff104b829f3)
 
 
 <!-- ## **Login page**
