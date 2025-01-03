@@ -1,66 +1,117 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# IIUM i-Clinic: Your Digital Healthcare Solution
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## **TEAM MEMBERS**
 
-## About Laravel
+1. MUHAMMAD HAKIM BIN MD NAZRI 2110457
+2. IMTENAN MIRAZ 2125101
+3. KHAIRUNNISA BINTI ABDULLAH 2212506
+4. RABIATUL ADAWIYAH BINTI ROHANY 2213530
+5. NUR ALIFAH ILYANA BINTI MOHD ZAMAN 2217466
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# **INTRODUCTION**
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+The i-Clinic website is designed to facilitate healthcare delivery and offer a more convenient service to the students, staffs and patients. Previously, patients needed to walk in and often waited for long periods to receive treatment. Patients were also challenged to obtain timely information, such as about doctors' unavailability. Moreover, patient data was not recorded correctly since they had to do so through Google forms without a procedure to record the history of treatments for a subsequent use.This website aims to address these challenges. It consists of a clinically relevant, web-based scheduling and appointment which is accessible to patients for booking, rescheduling, and cancelling appointments. An effective medical record management system, which will secure access and update for patients as well as clinic staff. The website will have a billing and payment system in order to facilitate payment of bills easily, and it will ensure the timely information concerning the operations of clinic, hours of operation, and news. The aim of this project is to optimize clinic work processes as well as decrease waiting times and provide a more structured, reliable health service.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# **OBJECTIVES**
 
-## Learning Laravel
+- To streamline appointment booking by providing a user-friendly online platform for patients to book, reschedule, or cancel appointments.
+- To have an efficient medical record management by implementing a secure system for storing, updating, and accessing patient medical records for both patients and healthcare providers.
+- To ensure data security and privacy by using a secure technologies to protect patient data and comply with healthcare regulations.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# **FEATURES & FUNCTIONALITIES**
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+The i-Clinic web application for the IIUM Clinic is designed to enhance the clinic's operations by integrating several key modules. Each module focuses on specific aspects of clinic management, providing a comprehensive and user-friendly system. Below is a detailed description of the features and functionalities of each module:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**Booking Appointment System** (Alifah)
 
-## Laravel Sponsors
+- The booking appointment system is designed to streamline the process of scheduling appointments for both patients and clinic staff. Key features include a robust search and filter functionality that allows users to find appointments by doctor, date, or patient name. The booking interface is user-friendly, enabling patients to easily select a doctor, date, time, and reason for their visit. A visual calendar view provides a clear overview of all booked appointments, helping both patients and staff keep track of schedules. Additionally, the system includes a notification feature that sends email or SMS reminders to patients about their upcoming appointments, reducing the likelihood of missed appointments. Admins have the ability to manage appointments efficiently, with options to view, edit, cancel, or reschedule as necessary.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+**Medical Record Management** (Nisa)
 
-### Premium Partners
+- The medical record management module ensures that all patient information is organized and easily accessible. Each patient has a detailed profile that includes their personal information and medical history, such as diseases like hypertension, diabetes, or asthma, along with the assigned doctor’s name. The system provides a comprehensive list of medical records that can be searched and filtered by various criteria, with options to add, edit, or delete records. When the "Add New Record" button is clicked, a pop-up window appears where users can input details of the new medical record, and after saving, the pop-up closes, adding the record to the list. The system also supports the uploading and viewing of attachments, such as medical images, lab results, and other relevant documents. Medical images can be uploaded by clicking the "Upload Image" button, and users can view or delete existing images from a simple list. Additionally, there is a dedicated section for doctor's notes, where detailed consultation notes can be recorded and accessed. This structure ensures all relevant information is well-organized and easily manageable by admins.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+**Billing and Payment System** (Miraz)
 
-## Contributing
+- The billing and payment system is designed to handle all financial transactions efficiently. It features automatic invoice generation for services rendered, ensuring that all billing information is accurate and up-to-date. The system integrates with various payment gateways to facilitate online payments, providing a convenient option for patients. Detailed billing history is maintained for each patient, allowing both patients and clinic staff to review past transactions. The system also sends payment reminders to patients, helping to ensure timely payments. Additionally, it allows for the application of discounts and the management of insurance claims, making the billing process smoother and more flexible.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+**Clinic Information and News** (Rabia)
 
-## Code of Conduct
+- The clinic information and news module serves as a communication hub for the clinic. It provides detailed information about the clinic, including the services offered and contact details. A dedicated section for news and updates keeps patients informed about the latest developments and announcements from the clinic. The News displays information about upcoming events and health camps, encouraging patient participation. A blog section features articles and health tips written by clinic staff, providing valuable information to patients. The module also includes user engagement features, such as the ability to comment on and share news posts, fostering a sense of community.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**Feedback/Survey** (Hakim)
 
-## Security Vulnerabilities
+- The feedback and survey module is designed to gather patient insights and improve the clinic's services. A feedback form allows patients to submit their suggestions and comments easily. Admins can create and manage surveys to gather specific patient insights, helping to identify areas for improvement. The system includes tools for analyzing feedback and survey responses, providing valuable data to the clinic staff. Reports can be generated based on this data, offering actionable insights that can be used to enhance patient care and overall clinic operations.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+In summary, the i-Clinic web application for the IIUM Clinic integrates essential functionalities into a cohesive system. Each module is designed to address specific operational needs, ensuring that the clinic can provide high-quality care while maintaining efficient administrative processes. By combining these features, CampusCare enhances both the patient experience and the clinic's overall efficiency.
 
-## License
+# **ERD**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+![erd](https://github.com/user-attachments/assets/88961f7b-bffd-427b-a50b-2d8c89de48d1)
+
+# **SEQUENCE DIAGRAM**
+
+![sequence_diagram](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/laravel_project_webapp.jpg)
+
+# **PROTOTYPES**
+
+## **Login page**
+
+![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/1.jpg)
+
+## **Register page**
+
+![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/2.jpg)
+
+## **Home page**
+![3](https://github.com/user-attachments/assets/0f036632-bade-48a2-87a1-a2cdfd5e0187)
+
+## **Book Appointment page**
+
+![6](https://github.com/user-attachments/assets/bab2c395-f8a2-46bd-b209-e95adeee364d)
+![7](https://github.com/user-attachments/assets/4fd914a4-b19b-49b9-9e23-bce5b00d15ec)
+
+## **Information and News page**
+
+![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/4.jpg)
+
+## **Medical Record Management page**
+
+![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/7.jpg)
+
+## **Feedback page**
+![WAD mockup](https://github.com/user-attachments/assets/c4a83648-0e2c-46f4-b26c-dff104b829f3)
+
+## **Billing History page**
+
+![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/5.jpg)
+
+## **Checkout page**
+
+![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/6.jpg)
+
+
+
+
+
+<!-- ## **Login page**
+
+![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/10.jpg) -->
+
+<!-- ## **Login page**
+
+![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/11.jpg) -->
+
+<!-- ## **Login page**
+
+![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/12.jpg) -->
+
+<!-- ## **Login page**
+
+![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/13.jpg) -->
+
+# **REFERENCE**
+1. Da Fonseca et. al. (2021). E-Health Practices and Technologies: A Systematic Review from 2014 to 2019. Healthcare, 9(9), 1192. https://doi.org/10.3390/healthcare9091192
+2. Halamka, J. (2022, March 16). The Digital Reconstruction of Healthcare is Upon Us - Mayo Clinic Platform. Mayo Clinic Platform. https://www.mayoclinicplatform.org/2021/06/11/the-digital-reconstruction-of-healthcare-is-upon-us
+3. KPJ. (2024). Kpjhealth.com.my. https://www.kpjhealth.com.my/events
+
+‌
