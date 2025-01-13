@@ -1,28 +1,14 @@
-@extends('master.layout')
+@extends('layouts.app')
 
 @section('content')
-    <section id="hero" class="hero">
-        <div class="container position-relative">
-            <div class="row gy-5" data-aos="fade-in">
-                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                    <h1>Welcome to i-Clinic</h1>
-                    <h2>We provide high-quality healthcare services for the whole family.</h2>
-                    <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="#about" class="btn-get-started scrollto">Get Started</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 hero-img">
-                    <img src="assets/img/hero-img.png" class="img-fluid" alt="">
-                </div>
-            </div>
-        </div>
-    </section><section id="upcoming-events" class="upcoming-events section-bg">
-        <div class="container" data-aos="fade-up">
 
-            <div class="section-header">
-                <h2>Upcoming Events</h2>
-                <p>Check out our upcoming events and join us!</p>
-            </div>
+    <div class="breadcrumbs">
+        <div class="container">
+            <h2>Upcoming Events</h2>
+            <p>Check out our upcoming events and join us!</p>
+        </div>
+    </div><section id="upcoming-events" class="upcoming-events section-bg">
+        <div class="container" data-aos="fade-up">
 
             <div class="row gy-4">
 
@@ -67,7 +53,7 @@
                         <div class="social">
                             <a href="#"><i class="bi bi-twitter"></i></a>
                             <a href="#"><i class="bi bi-facebook"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
+                            <a href="#"><i class="bi-instagram"></i></a>
                         </div>
                     </div>
                 </div></div>
