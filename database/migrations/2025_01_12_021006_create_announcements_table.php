@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Schema;
 {
     public function up()
     {
-        Schema::create('announcement', function (Blueprint $table) {
+        Schema::create('announcements', function (Blueprint $table) {
             $table->id();
             $table->string('topic');
             $table->string('picture')->nullable();
@@ -19,6 +19,6 @@ use Illuminate\Support\Facades\Schema;
 
     public function down()
     {
-        Schema::dropIfExists('announcement');
+        Schema::dropIfExists('announcements');
     }
 }

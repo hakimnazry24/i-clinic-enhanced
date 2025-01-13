@@ -10,8 +10,8 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $announcement = Announcement::latest()->get(); // Fetch all announcements in descending order
-        return view('master.home', compact('announcements'));
+        $announcements = Announcement::latest()->get(); // Fetch all announcements in descending order
+        return view('home', compact('announcements'));
     }
 
     public function store(Request $request)

@@ -96,7 +96,10 @@
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
           </nav>
 
-          <a class="cta-btn d-none d-sm-block" href="{{ route('make-appointment') }}">Make an Appointment</a>
+          <a class="cta-btn d-none d-sm-block" 
+          {{-- href="{{ route('make-appointment') }}" --}}
+          >
+          Make an Appointment</a>
 
         </div>
 
