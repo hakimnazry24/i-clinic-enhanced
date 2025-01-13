@@ -909,15 +909,12 @@
 <body class="bg-[#07a196]">
     <header class="flex justify-between p-4 text-white">
         <div class="font-semibold text-2xl ">
-            <a href={{route("home")}}>I-CLINIC</a>
+            <a href={{ route('home') }}>I-CLINIC</a>
         </div>
         <div class="flex gap-x-6 font-semibold text-2xl">
-            <a href={{route("home")}}>Home</a>
-            <a href="">Booking Appointment</a>
+            <a href={{ route('home') }}>Home</a>
             <a href="">Information and News</a>
-            <a href="">Medical Records</a>
-            <a href="">Feedback</a>
-            <a href="">Payment</a>
+            <a href={{ route('login') }}>Login</a>
         </div>
     </header>
 
