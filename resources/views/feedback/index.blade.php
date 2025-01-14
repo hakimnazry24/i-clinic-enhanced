@@ -1,7 +1,7 @@
 @extends('master.layout')
 
 @section('content')
-    <div class="grid grid-cols-2 p-20 px-32 gap-x-5 bg-[#07a196] h-screen">
+    <div class="grid grid-cols-2 p-20 px-32 gap-x-5 bg-blue-400 h-screen">
         <div class="text-white">
             <h1 class="text-7xl font-bold mb-5"><span class="text-yellow-400 tracking-wider">Convey Your</span><br /> Ideas to
                 Us</h1>

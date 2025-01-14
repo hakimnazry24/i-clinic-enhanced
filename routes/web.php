@@ -4,10 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\MedicalRecordController;
 
 // home route
 Route::get('/', function () {
-    return view('home');
+    return view('mainpage');
 })->name("home");
 
 // feedback route
@@ -26,6 +27,9 @@ Route::get('/make-appointment', function () {
 Route::post("/make-appointment", [AppointmentController::class, "store"])->name("appointment.store");
 Route::get('appointment', [AppointmentController::class, 'index']);
 Route::resource('appointment', AppointmentController::class);
+
+// medical record route
+Route::resource('medical_records', MedicalRecordController::class);
 
 
 Route::middleware([
