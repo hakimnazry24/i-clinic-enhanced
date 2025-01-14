@@ -7,20 +7,32 @@ use App\Models\Announcement;
 
 class NewsController extends Controller
 {
-    public function submitForm(Request $request)
+    /**
+     * Display the form or list of announcements.
+     */
+    public function index()
     {
-        // Validate user input
-        $validatedData = $request->validate([
+        $announcements = Announcement::all(); // Fetch all announcements
+        return view('news', compact('announcements'));
+    }
+
+    /**
+     * Handle the form submission and store the data.
+     */
+    public function store(Request $request)
+    {
+        // Validate the input data
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255|unique:announcements,email',
+            'email' => 'required|email|unique:announcements,email',
             'phone' => 'required|string|max:15',
             'address' => 'required|string|max:500',
         ]);
 
-        // Save the data to the announcements table
-        Announcement::create($validatedData);
+        // Save the data into the announcements table
+        Announcement::create($validated);
 
-        // Redirect back to the news page with a success message
-        return redirect()->route('news')->with('success', 'Your details have been submitted successfully!');
+        // Redirect back with a success message
+        return redirect()->route('news')->with('success', 'Announcement created successfully!');
     }
 }

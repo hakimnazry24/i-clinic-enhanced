@@ -35,16 +35,6 @@
                     </div>
                 </div>
 
-                <!-- Event 3: Parentcraft Class -->
-                <div class="card mb-4" style="border-radius: 15px; overflow: hidden; border: none; box-shadow: 0 8px 15px rgba(0,0,0,0.1);">
-                    <img src="{{ asset('assets/img/parentcraft_class.jpg') }}" class="card-img-top" alt="Parentcraft Class">
-                    <div class="card-body" style="background-color: #f8f9fa;">
-                        <h5 class="card-title text-center" style="font-family: 'Poppins', sans-serif; font-weight: bold; color: #0b7285;">Parentcraft Class</h5>
-                        <p class="card-text text-muted text-center" style="font-family: 'Roboto', sans-serif; font-size: 14px;">
-                            Come and join our parentcraft class.<br>
-                            <strong>Date:</strong> 10 January 2025<br>
-                            <strong>Time:</strong> 9:00 AM - 12:30 PM<br>
-                            <strong>Place:</strong> SHAS Mosque
                         </p>
                     </div>
                     </div>

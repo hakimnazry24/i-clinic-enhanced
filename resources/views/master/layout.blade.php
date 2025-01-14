@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>@yield('title', 'Medilab')</title> <!-- Dynamic Title -->
+    <title>@yield('title', 'I-CLINIC')</title> <!-- Dynamic Title -->
     <meta name="description" content="">
     <meta name="keywords" content="">
 
@@ -45,9 +45,9 @@
                 </a>
                 <nav id="navmenu" class="navmenu">
                     <ul>
-                        <li><a href="#hero" class="active">Home</a></li>
+                        <li><a href="#hero">Home</a></li>
                         <li><a href="#booking">BookingAppoiment</a></li>
-                        <li><a href="#information">Information and News</a></li>
+                        <li><a href="#information"class="active">Information and News</a></li>
                         <li><a href="#record">Medical Record</a></li>
                         <li><a href="#feedback">Feedback</a></li>
                         <li><a href="#payment">Payment</a></li>
@@ -67,9 +67,7 @@
             <div class="row">
                 <div class="col-lg-4 footer-about">
                     <h3><I-clinic></I-clinic></h3>
-                    <p>A108 Adam Street, New York, NY 535022</p>
-                    <p><strong>Phone:</strong> +1 5589 55488 55</p>
-                    <p><strong>Email:</strong> info@example.com</p>
+
                 </div>
             </div>
         </div>

@@ -3,6 +3,15 @@
 @section('content')
 <div class="container mt-5">
     <h1 class="text-center">User Information Form</h1>
+
+    <!-- Display success message -->
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    <!-- Form for submitting user information -->
     <form action="{{ route('submitForm') }}" method="POST">
         @csrf
         <div class="mb-3">
@@ -23,5 +32,12 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
+    <hr class="my-5">
+
+    <!-- Button to navigate to another page -->
+    <div class="text-center">
+        <a href="{{ route('news') }}" class="btn btn-secondary">Go to News Page</a>
+    </div>
 </div>
 @endsection
