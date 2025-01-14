@@ -1,76 +1,96 @@
 @extends('master.layout')
 
 @section('content')
-    <section id="hero" class="hero">
-        <div class="container position-relative">
-            <div class="row gy-5" data-aos="fade-in">
-                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                    <h1>Welcome to i-Clinic</h1>
-                    <h2>We provide high-quality healthcare services for the whole family.</h2>
-                    <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="#about" class="btn-get-started scrollto">Get Started</a>
+    <section id="home-section" class="home-section">
+        <div class="container py-5 d-flex justify-content-center">
+            <div class="col-lg-6">
+                <h2 class="text-center mb-5" style="font-family: 'Poppins', sans-serif; font-weight: bold; color: #0b7285; text-transform: uppercase;">Upcoming Events</h2>
+                <!-- Event 1: Blood Donation -->
+                <div class="card mb-4" style="border-radius: 15px; overflow: hidden; border: none; box-shadow: 0 8px 15px rgba(0,0,0,0.1);">
+                    <img src="{{ asset('assets/images/blood_donation.jpg') }}" class="card-img-top" alt="Blood Donation">
+                    <div class="card-body" style="background-color: #f8f9fa;">
+                        <h5 class="card-title text-center" style="font-family: 'Poppins', sans-serif; font-weight: bold; color: #0b7285;">Blood Donation</h5>
+                        <p class="card-text text-muted text-center" style="font-family: 'Roboto', sans-serif; font-size: 14px;">
+                            Join our blood donation campaign to save lives.<br>
+                            <strong>Date:</strong> 2-6 January 2025<br>
+                            <strong>Time:</strong> 9:00 AM - 4:00 PM<br>
+                            <strong>Place:</strong> SHAS Mosque
+                        </p>
+                        <a href="#" class="btn btn-primary d-block mx-auto" style="background-color: #0b7285; border: none; font-family: 'Poppins', sans-serif; width: 80%;">Join Us</a>
                     </div>
                 </div>
-                <div class="col-lg-6 order-1 order-lg-2 hero-img">
-                    <img src="assets/img/hero-img.png" class="img-fluid" alt="">
+
+                <!-- Event 2: World Kidney Day -->
+                <div class="card mb-4" style="border-radius: 15px; overflow: hidden; border: none; box-shadow: 0 8px 15px rgba(0,0,0,0.1);">
+                    <img src="{{ asset('assets/images/kidney_day.jpg') }}" class="card-img-top" alt="World Kidney Day">
+                    <div class="card-body" style="background-color: #f8f9fa;">
+                        <h5 class="card-title text-center" style="font-family: 'Poppins', sans-serif; font-weight: bold; color: #0b7285;">World Kidney Day 2024 Celebration</h5>
+                        <p class="card-text text-muted text-center" style="font-family: 'Roboto', sans-serif; font-size: 14px;">
+                            Come and join us celebrating World Kidney Day 2024.<br>
+                            <strong>Date:</strong> 27 December 2024<br>
+                            <strong>Time:</strong> 9:00 AM<br>
+                            <strong>Place:</strong> ICC IIUM
+                        </p>
+                        <a href="#" class="btn btn-primary d-block mx-auto" style="background-color: #0b7285; border: none; font-family: 'Poppins', sans-serif; width: 80%;">Join Us</a>
+                    </div>
+                </div>
+
+                <!-- Event 3: Parentcraft Class -->
+                <div class="card mb-4" style="border-radius: 15px; overflow: hidden; border: none; box-shadow: 0 8px 15px rgba(0,0,0,0.1);">
+                    <img src="{{ asset('assets/images/parentcraft_class.jpg') }}" class="card-img-top" alt="Parentcraft Class">
+                    <div class="card-body" style="background-color: #f8f9fa;">
+                        <h5 class="card-title text-center" style="font-family: 'Poppins', sans-serif; font-weight: bold; color: #0b7285;">Parentcraft Class</h5>
+                        <p class="card-text text-muted text-center" style="font-family: 'Roboto', sans-serif; font-size: 14px;">
+                            Come and join our parentcraft class.<br>
+                            <strong>Date:</strong> 10 January 2025<br>
+                            <strong>Time:</strong> 9:00 AM - 12:30 PM<br>
+                            <strong>Place:</strong> SHAS Mosque
+                        </p>
+                        @extends('master.layout')
+
+@section('content')
+<section id="home-section" class="home-section">
+    <div class="container py-5 d-flex justify-content-center">
+        <div class="col-lg-6">
+            <h2 class="text-center mb-5" style="font-family: 'Poppins', sans-serif; font-weight: bold; color: #0b7285; text-transform: uppercase;">Upcoming Events</h2>
+
+            <!-- Event 1: Example -->
+            <div class="card mb-4" style="border-radius: 15px; overflow: hidden; border: none; box-shadow: 0 8px 15px rgba(0,0,0,0.1);">
+                <img src="{{ asset('assets/images/blood_donation.jpg') }}" class="card-img-top" alt="Blood Donation">
+                <div class="card-body" style="background-color: #f8f9fa;">
+                    <h5 class="card-title text-center" style="font-family: 'Poppins', sans-serif; font-weight: bold; color: #0b7285;">Blood Donation</h5>
+                    <p class="card-text text-muted text-center" style="font-family: 'Roboto', sans-serif; font-size: 14px;">
+                        Join our blood donation campaign to save lives.<br>
+                        <strong>Date:</strong> 2-6 January 2025<br>
+                        <strong>Time:</strong> 9:00 AM - 4:00 PM<br>
+                        <strong>Place:</strong> SHAS Mosque
+                    </p>
+                    <!-- Join Us Button -->
+                    <a href="{{ route('news') }}" class="btn btn-primary d-block mx-auto" style="background-color: #0b7285; border: none; font-family: 'Poppins', sans-serif; width: 80%;">Join Us</a>
+                </div>
+            </div>
+
+            <!-- Repeat for other events -->
+        </div>
+    </div>
+</section>
+@endsection
+
+                    </div>
+                </div>
+
+                <!-- Contact Us Section -->
+                <div class="card mb-4" style="border-radius: 15px; overflow: hidden; background-color: #e3f2fd; padding: 20px;">
+                    <h3 class="text-center" style="font-family: 'Poppins', sans-serif; font-weight: bold; color: #0b7285;">Contact Us</h3>
+                    <p class="text-center" style="font-family: 'Roboto', sans-serif; font-size: 14px; color: #6c757d;">We’re here to help you!</p>
+                    <ul class="list-unstyled text-center">
+                        <li><strong>Phone:</strong> 03-369258</li>
+                        <li><strong>Operating Hours:</strong> Monday-Saturday, 08:00-17:50</li>
+                        <li><strong>Email:</strong> <a href="mailto:iclinic@gmail.com" style="color: #0b7285; text-decoration: none;">iclinic@gmail.com</a></li>
+                        <li><strong>Address:</strong> International Islamic University Malaysia, Jalan Gombak, 53100 Kuala Lumpur</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section><section id="upcoming-events" class="upcoming-events section-bg">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-header">
-                <h2>Upcoming Events</h2>
-                <p>Check out our upcoming events and join us!</p>
-            </div>
-
-            <div class="row gy-4">
-
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="event-item">
-                        <img src="assets/img/event-1.jpg" class="img-fluid" alt="">
-                        <h3>World Kidney Day 2024 Celebration</h3>
-                        <div class="price">
-                            <p><span>Date:</span> 27 December 2024</p>
-                            <p><span>Time:</span> 9:00 AM</p>
-                            <p><span>Place:</span> ICC HUM</p>
-                        </div>
-                        <div class="social">
-                            <a href="#"><i class="bi bi-twitter"></i></a>
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                        </div>
-                    </div>
-                </div><div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="event-item">
-                        <img src="assets/img/event-2.jpg" class="img-fluid" alt="">
-                        <h3>Blood Donation</h3>
-                        <div class="price">
-                            <p><span>Date:</span> 2-6 January 2025</p>
-                            <p><span>Time:</span> 2:00 AM - 4:00 PM</p>
-                            <p><span>Place:</span> SHAS MOSQUE</p>
-                        </div>
-                        <div class="social">
-                            <a href="#"><i class="bi bi-twitter"></i></a>
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                        </div>
-                    </div>
-                </div><div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="event-item">
-                        <img src="assets/img/event-3.jpg" class="img-fluid" alt="">
-                        <h3>Parentcraft Class</h3>
-                        <div class="price">
-                            <p><span>Date:</span> 10 January 2025</p>
-                            <p><span>Time:</span> 9:00 AM - 12:30 PM</p>
-                        </div>
-                        <div class="social">
-                            <a href="#"><i class="bi bi-twitter"></i></a>
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                        </div>
-                    </div>
-                </div></div>
-
-        </div>
-    </section>@endsection
+    </section>
+@endsection

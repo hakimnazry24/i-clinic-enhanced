@@ -3,8 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
 
-// Route to display announcements on the homepage
-Route::get('/', [NewsController::class, 'index'])->name('news.index');
+// Route to display the form (news.blade.php)
+Route::get('/news', function () {
+    return view('news');
+})->name('news');
 
-// Route to handle form submission for creating announcements
-Route::post('/news', [NewsController::class, 'store'])->name('news.store');
+// Route to handle form submission
+Route::post('/submit-form', [NewsController::class, 'submitForm'])->name('submitForm');

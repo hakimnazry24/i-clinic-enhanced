@@ -2,13 +2,12 @@
 
 namespace App\Models;
 
-use App\Models\Announcement;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Announcement extends Model
+class JoinRequest extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['topic', 'picture', 'message'];
+    protected $fillable = ['name', 'email', 'phone', 'address'];
 }
