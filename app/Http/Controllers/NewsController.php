@@ -33,6 +33,6 @@ class NewsController extends Controller
         Announcement::create($validated);
 
         // Redirect back with a success message
-        return redirect()->route('news')->with('success', 'Announcement created successfully!');
+        return redirect()->route('news')->with('success', 'Information submitted successfully!');
     }
 }
