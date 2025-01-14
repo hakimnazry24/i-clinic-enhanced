@@ -7,7 +7,7 @@
                 <h2 class="text-center mb-5" style="font-family: 'Poppins', sans-serif; font-weight: bold; color: #0b7285; text-transform: uppercase;">Upcoming Events</h2>
                 <!-- Event 1: Blood Donation -->
                 <div class="card mb-4" style="border-radius: 15px; overflow: hidden; border: none; box-shadow: 0 8px 15px rgba(0,0,0,0.1);">
-                    <img src="{{ asset('assets/images/blood_donation.jpg') }}" class="card-img-top" alt="Blood Donation">
+                    <img src="{{ asset('assets/img/blood_donation.jpg') }}" class="card-img-top" alt="Blood Donation">
                     <div class="card-body" style="background-color: #f8f9fa;">
                         <h5 class="card-title text-center" style="font-family: 'Poppins', sans-serif; font-weight: bold; color: #0b7285;">Blood Donation</h5>
                         <p class="card-text text-muted text-center" style="font-family: 'Roboto', sans-serif; font-size: 14px;">
@@ -22,7 +22,7 @@
 
                 <!-- Event 2: World Kidney Day -->
                 <div class="card mb-4" style="border-radius: 15px; overflow: hidden; border: none; box-shadow: 0 8px 15px rgba(0,0,0,0.1);">
-                    <img src="{{ asset('assets/images/kidney_day.jpg') }}" class="card-img-top" alt="World Kidney Day">
+                    <img src="{{ asset('assets/img/kidney_day.jpg') }}" class="card-img-top" alt="World Kidney Day">
                     <div class="card-body" style="background-color: #f8f9fa;">
                         <h5 class="card-title text-center" style="font-family: 'Poppins', sans-serif; font-weight: bold; color: #0b7285;">World Kidney Day 2024 Celebration</h5>
                         <p class="card-text text-muted text-center" style="font-family: 'Roboto', sans-serif; font-size: 14px;">
@@ -37,7 +37,7 @@
 
                 <!-- Event 3: Parentcraft Class -->
                 <div class="card mb-4" style="border-radius: 15px; overflow: hidden; border: none; box-shadow: 0 8px 15px rgba(0,0,0,0.1);">
-                    <img src="{{ asset('assets/images/parentcraft_class.jpg') }}" class="card-img-top" alt="Parentcraft Class">
+                    <img src="{{ asset('assets/img/parentcraft_class.jpg') }}" class="card-img-top" alt="Parentcraft Class">
                     <div class="card-body" style="background-color: #f8f9fa;">
                         <h5 class="card-title text-center" style="font-family: 'Poppins', sans-serif; font-weight: bold; color: #0b7285;">Parentcraft Class</h5>
                         <p class="card-text text-muted text-center" style="font-family: 'Roboto', sans-serif; font-size: 14px;">
@@ -46,9 +46,12 @@
                             <strong>Time:</strong> 9:00 AM - 12:30 PM<br>
                             <strong>Place:</strong> SHAS Mosque
                         </p>
-                        @extends('master.layout')
+                    </div>
+                    </div>
 
-@section('content')
+                        {{-- @extends('master.layout') --}}
+
+{{-- @section('content')
 <section id="home-section" class="home-section">
     <div class="container py-5 d-flex justify-content-center">
         <div class="col-lg-6">
@@ -73,11 +76,9 @@
             <!-- Repeat for other events -->
         </div>
     </div>
-</section>
-@endsection
+</section> --}}
+{{-- @endsection --}}
 
-                    </div>
-                </div>
 
                 <!-- Contact Us Section -->
                 <div class="card mb-4" style="border-radius: 15px; overflow: hidden; background-color: #e3f2fd; padding: 20px;">
