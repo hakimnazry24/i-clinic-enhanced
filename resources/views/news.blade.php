@@ -12,7 +12,7 @@
     @endif
 
     <!-- Form for submitting user information -->
-    <form action="{{ route('submitForm') }}" method="POST">
+    <form action="{{ route('news.store') }}" method="POST">
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
