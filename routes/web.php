@@ -2,13 +2,22 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\NewsController;
 
+// home route
 Route::get('/', function () {
     return view('home');
 })->name("home");
 
-Route::get("/feedback", [FeedbackController::class, "create"])->name("feedback.create");
+// feedback route
+Route::get("/feedback", [FeedbackController::class, "index"])->name("feedback.index");
 Route::post("/feedback", [FeedbackController::class, "store"])->name("feedback.store");
+
+// news route
+Route::get('/news', [NewsController::class, 'index'])->name('news');
+Route::get('/news-form', [NewsController::class, 'news_form'])->name('news-form');
+Route::post('/news', [NewsController::class, 'store'])->name('news.store');
+
 
 Route::middleware([
     'auth:sanctum',
@@ -20,8 +29,3 @@ Route::middleware([
     })->name('dashboard');
 });
 
-// Route to display the news form
-Route::get('/news', [NewsController::class, 'index'])->name('news');
-
-// Route to handle form submission
-Route::post('/news', [NewsController::class, 'store'])->name('news.store');

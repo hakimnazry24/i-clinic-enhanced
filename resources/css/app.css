@@ -1,5 +1,3 @@
-/* Import Bootstrap (if you're using it alongside Tailwind) */
-@import "~bootstrap/scss/bootstrap";
 
 /* Import Tailwind CSS */
 @tailwind base;

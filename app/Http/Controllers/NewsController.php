@@ -13,7 +13,7 @@ class NewsController extends Controller
     public function index()
     {
         $announcements = Announcement::all(); // Fetch all announcements
-        return view('news', compact('announcements'));
+        return view('news.main', compact('announcements'));
     }
 
     /**
@@ -34,5 +34,9 @@ class NewsController extends Controller
 
         // Redirect back with a success message
         return redirect()->route('news')->with('success', 'Information submitted successfully!');
+    }
+
+    public function news_form() {
+        return view("news.news-form");
     }
 }

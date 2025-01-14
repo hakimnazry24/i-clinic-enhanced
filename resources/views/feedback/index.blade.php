@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('master.layout')
 
 @section('content')
     <div class="grid grid-cols-2 p-20 px-32 gap-x-5 bg-[#07a196] h-screen">

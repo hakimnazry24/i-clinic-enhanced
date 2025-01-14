@@ -12,6 +12,7 @@ class FeedbackController extends Controller
      */
     public function index()
     {
+        return view("feedback.index");
     }
     
     /**
@@ -19,7 +20,6 @@ class FeedbackController extends Controller
      */
     public function create()
     {
-        return view("feedback.create");
         //
     }
     

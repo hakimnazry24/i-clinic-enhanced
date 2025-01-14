@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -26,6 +27,8 @@
 
     <!-- Main CSS File -->
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="index-page">
@@ -45,15 +48,18 @@
                 </a>
                 <nav id="navmenu" class="navmenu">
                     <ul>
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="#booking">BookingAppoiment</a></li>
-                        <li><a href="#information"class="active">Information and News</a></li>
-                        <li><a href="#record">Medical Record</a></li>
-                        <li><a href="#feedback">Feedback</a></li>
-                        <li><a href="#payment">Payment</a></li>
+                        <li><a href={{ route('home') }}>Home</a></li>
+                        {{-- <li><a href="#booking">Booking Appoiment</a></li> --}}
+                        <li><a href={{ route('news') }}>Information and News</a></li>
+                        {{-- <li><a href="#record">Medical Record</a></li> --}}
+                        <li><a href={{ route('feedback.index') }}>Feedback</a></li>
+                        {{-- <li><a href="#payment">Payment</a></li> --}}
+                        <li><a href="/login">Login</a>
+                        </li>
+                        <li><a href="/register"
+                                class="bg-green-400 font-semibold text-black px-4 py-2 rounded-md">Register Now</a></li>
                     </ul>
                 </nav>
-
             </div>
         </div>
     </header>
@@ -85,4 +91,5 @@
     <!-- Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
 </body>
+
 </html>
