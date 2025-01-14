@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\AppointmentController;
 
 // home route
 Route::get('/', function () {
@@ -17,6 +18,14 @@ Route::post("/feedback", [FeedbackController::class, "store"])->name("feedback.s
 Route::get('/news', [NewsController::class, 'index'])->name('news');
 Route::get('/news-form', [NewsController::class, 'news_form'])->name('news-form');
 Route::post('/news', [NewsController::class, 'store'])->name('news.store');
+
+// make appointment route
+Route::get('/make-appointment', function () {
+    return view('appointment');
+})->name('make-appointment');
+Route::post("/make-appointment", [AppointmentController::class, "store"])->name("appointment.store");
+Route::get('appointment', [AppointmentController::class, 'index']);
+Route::resource('appointment', AppointmentController::class);
 
 
 Route::middleware([

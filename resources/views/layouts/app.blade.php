@@ -10,7 +10,10 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+<<<<<<< HEAD
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+=======
+>>>>>>> 91f172f53d1bead76c4e27443b7723c1f01fa614
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -35,7 +38,11 @@
 
             <!-- Page Content -->
             <main>
+<<<<<<< HEAD
                 @yield('content')
+=======
+                {{ $slot }}
+>>>>>>> 91f172f53d1bead76c4e27443b7723c1f01fa614
             </main>
         </div>
 

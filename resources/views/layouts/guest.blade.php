@@ -15,7 +15,11 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <!-- Styles -->
+<<<<<<< HEAD
         {{-- @livewireStyles --}}
+=======
+        @livewireStyles
+>>>>>>> 91f172f53d1bead76c4e27443b7723c1f01fa614
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">
