@@ -65,7 +65,7 @@ In summary, the i-Clinic web application for the IIUM Clinic integrates essentia
 ## **Home Page**
 ![3](https://github.com/user-attachments/assets/0f036632-bade-48a2-87a1-a2cdfd5e0187)
 
-## **Book Appointment page**
+## **Make Appointment page**
 ![6](https://github.com/user-attachments/assets/bab2c395-f8a2-46bd-b209-e95adeee364d)
 ![7](https://github.com/user-attachments/assets/4fd914a4-b19b-49b9-9e23-bce5b00d15ec)
 
@@ -108,13 +108,22 @@ The Latest Announcements section will highlight critical information such as cha
 ## **Feedback page**
 ![Screenshot 2025-01-15 211701](https://github.com/user-attachments/assets/9cc8316b-3a0c-41ff-8302-31eb21501d4a)
 
+The **Feedback Page** will allow users to submit their suggestions, comments, or inquiries directly to the clinic. The page will include fields for users to input their **name**, **email**, and **phone number** for follow-up purposes, ensuring the clinic can respond to them if needed. Additionally, there will be a text box where users can write the **message** they want to convey, whether it's feedback, a question, or a suggestion. Once the form is submitted, the feedback will be sent to the clinic’s team, allowing them to review and address it appropriately. This page helps create an open line of communication between the clinic and its users, enabling improvements based on their input.
 
-## **Book Appointment page**
+## **Make Appointment page**
 ![Screenshot 2025-01-15 211727](https://github.com/user-attachments/assets/a9201d46-597a-464b-ab24-62ad1654aa28)
 
+The **Make Appointment** page allows users to schedule a visit by providing essential details. Users will be required to input their **name**, and either their **matric number** (for students) or **staff ID** (for staff) to identify their affiliation with IIUM. Additionally, they must enter their **email** and **phone number** for confirmation and contact purposes. Users will select the **date and time** for their appointment, choose the relevant **department**, and specify the **doctor** they wish to see. A field for **symptoms** will allow users to briefly describe their medical concerns, helping the clinic prepare for the appointment. Once submitted, the appointment request will be processed, and users will receive a confirmation of their booking. This page simplifies the appointment scheduling process, ensuring accurate and organized patient records.
 
-## **Login page**
+## **Staff Login page**
+![WhatsApp Image 2025-01-15 at 21 27 53_99d2e7c6](https://github.com/user-attachments/assets/c430ac93-3359-4328-93de-ad977926beb8)
 
+The **Staff Login** page allows doctors and nurses to securely access their accounts. To log in, staff members will be required to input their **email** and **password**. There will also be a **"Remember Me"** option that allows users to stay logged in on the device, reducing the need to enter credentials each time they access the site. If a staff member forgets their password, they can use the **"Forgot Password"** link to reset it securely through their email. This login page ensures that only authorized medical staff can access sensitive clinic information, maintaining both security and convenience.
+
+## **Medical Record Management page**
+![WhatsApp Image 2025-01-15 at 21 28 54_a9a79aa4](https://github.com/user-attachments/assets/448ac023-4bbb-4068-9a07-5bbf9a3adff6)
+
+The **Medical Record** page provides authorized doctors with secure access to their patients' medical histories. Through this page, doctors can view detailed records including previous diagnoses, treatments, medications, allergies, and other relevant health information. The page is designed to ensure that doctors have quick and organized access to important patient data, enabling them to make informed decisions during consultations. Access to this page will be restricted to authorized personnel only, with proper authentication protocols in place to protect patient privacy and data security. This feature streamlines patient care by providing doctors with comprehensive medical histories in a digital format.
 
 # **REFERENCE**
 1. Da Fonseca et. al. (2021). E-Health Practices and Technologies: A Systematic Review from 2014 to 2019. Healthcare, 9(9), 1192. https://doi.org/10.3390/healthcare9091192
