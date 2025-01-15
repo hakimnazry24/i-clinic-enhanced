@@ -71,23 +71,37 @@
                 <nav id="navmenu" class="navmenu">
                     <ul>
                         <li><a href={{ route('home') }} class="active">Home<br></a></li>
-                        <li><a href={{ route('feedback.index') }}>Feedback</a></li>
+                        @auth
+                            <li><a href="/dashboard" class="active">Dashboard<br></a></li>
+                        @endauth
                         <li><a href={{ route('news') }}>News and Announcement</a></li>
                         @auth
-                            <a class="cta-btn d-none d-sm-block" href="{{ route('make-appointment') }}">Make an
-                                Appointment</a>
                         @else
-                            <li><a href="/login">Login</a></li>
-                            <li><a href="/register"
-                                    class="bg-blue-600 text-white font-semibold px-4 py-2 rounded-md">Register</a></li>
+                        <li>
+                            <a class="" href="{{ route('feedback.index') }}">
+                                Feedback</a>
+                            </li>
+                            <li>
+                                <a class="cta-btn d-none d-sm-block" href="{{ route('make-appointment') }}">Make an
+                                    Appointment</a>
+                            </li>
+                        @endauth
+                        @auth
+                            <li>Welcome, Dr. {{ Auth::user()->name }}</li>
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Logout</button>
+                                </form>
+                            </li>
+                        @else
+                            <li><a href="/login">Staff Login</a></li>
                         @endauth
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
             </div>
-
         </div>
-
     </header>
 
     @yield('content')

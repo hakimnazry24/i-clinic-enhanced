@@ -31,14 +31,11 @@ Route::resource('appointment', AppointmentController::class);
 // medical record route
 Route::resource('medical_records', MedicalRecordController::class);
 
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('patient.dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [MedicalRecordController::class, "index"])->name('dashboard');
 });
 

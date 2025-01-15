@@ -15,13 +15,13 @@ class CreateMedicalRecordsTable extends Migration
 {
     Schema::create('medical_records', function (Blueprint $table) {
         $table->id();
-        $table->unsignedBigInteger('user_id');
-        $table->date('date');
-        $table->string('type');
-        $table->text('notes');
+        $table->string('full_name');
+        $table->string('age');
+        $table->string('contact');
+        $table->string('medical_history');
+        $table->string('doctor');
         $table->timestamps();
 
-        $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
     });
 }
 

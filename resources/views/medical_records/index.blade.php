@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container mt-5">
-    <h1>Medical Records</h1>
+    <h1 class="text-2xl font-semibold mb-5">Medical Records</h1>
     <a href="{{ route('medical_records.create') }}" class="btn btn-primary mb-3">Add New Record</a>
 
     @if(session('success'))

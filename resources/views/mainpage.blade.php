@@ -1,4 +1,5 @@
 @extends('master.layout')
+
 @section('content')
     <main class="main">
 
@@ -660,6 +661,4 @@
     </main>
 @endsection
 
-</body>
 
-</html>
