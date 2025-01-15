@@ -89,14 +89,17 @@ In summary, the i-Clinic web application for the IIUM Clinic integrates essentia
 ![login-page](https://github.com/hakimnazry24/project-web-app-laravel/blob/main/prototypes/6.jpg)
 
 # **WEBSITE PREVIEW**
-##**Home Page**
-![image](https://github.com/user-attachments/assets/7ee055c3-0347-4a94-8a99-7b5eac80269d)
+## **Home Page**
+![Screenshot 2025-01-15 204838](https://github.com/user-attachments/assets/1304f6c4-f89e-4331-aa1a-4e4069c43121)
+
 The i-Clinic homepage is designed to provide users with a comprehensive overview of the clinic’s offerings and features. It begins with a welcoming introduction that emphasizes expert care, personalized treatment, and state-of-the-art facilities. The "About Us" section highlights the clinic’s mission, values, and commitment to delivering high-quality healthcare services. Users can explore the "Services" section to learn about the range of treatments and healthcare solutions available, while the "Departments" section provides details on the specialized medical areas within the clinic. 
 
 Additionally, a gallery section showcases images of the clinic’s facilities, staff, and environment, giving visitors a sense of the clinic’s professionalism and modern infrastructure. The "Contact Us" section ensures that users can easily find the clinic’s location, phone number, email, and other contact details. The homepage also includes functional features like appointment booking and staff login for convenience and accessibility.
 
-##**News and Announcement Page**
-![image](https://github.com/user-attachments/assets/97f46832-a388-4d00-a105-ecf335f9d2a2)
+## **News and Announcement Page**
+![Screenshot 2025-01-15 210452](https://github.com/user-attachments/assets/6e2d83ea-a5d6-46da-9a17-c12f461d1e89)
+![Screenshot 2025-01-15 211318](https://github.com/user-attachments/assets/97ad216d-cf34-44c3-a5ef-7973bb71c67a)
+
 The News and Announcement page on the IIUM Clinic website serves as a central platform to keep patients, staff, and visitors informed about the latest events, updates, and important announcements related to the clinic. This page will feature a Latest News section, which displays current and upcoming articles in chronological order. For example, posts like "Blood Donation Campaign - January 2025" would give users detailed information about the event, including its purpose, how to participate, and the schedule.
 
 The Latest Announcements section will highlight critical information such as changes in clinic hours, new services, or temporary closures. These announcements would be presented clearly and concisely, often with alert icons or banners for emphasis. Users will also have the ability to filter content by category, such as "Events," "Campaigns," or "Announcements," making it easy to find relevant information. In addition, search functionality will allow users to find specific announcements or events, such as "blood donation" or "holiday hours." Each post will include a call-to-action button, like "Learn More" or "Register Now," guiding users to further details or registration pages. Visually, the page will feature eye-catching images or icons to enhance the appeal and engagement of each post. Overall, the News and Announcement page will provide visitors with real-time information about the clinic, ensuring easy access to important updates and maintaining transparency with users.
