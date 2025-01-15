@@ -122,6 +122,8 @@ The **Staff Login** page allows doctors and nurses to securely access their acco
 
 ## **Medical Record Management page**
 ![WhatsApp Image 2025-01-15 at 21 28 54_a9a79aa4](https://github.com/user-attachments/assets/448ac023-4bbb-4068-9a07-5bbf9a3adff6)
+![WhatsApp Image 2025-01-15 at 21 29 19_114d9d26](https://github.com/user-attachments/assets/772d3a59-8c05-4b29-9d6f-8186c2ebdd51)
+
 
 The **Medical Record** page provides authorized doctors with secure access to their patients' medical histories. Through this page, doctors can view detailed records including previous diagnoses, treatments, medications, allergies, and other relevant health information. The page is designed to ensure that doctors have quick and organized access to important patient data, enabling them to make informed decisions during consultations. Access to this page will be restricted to authorized personnel only, with proper authentication protocols in place to protect patient privacy and data security. This feature streamlines patient care by providing doctors with comprehensive medical histories in a digital format.
 
