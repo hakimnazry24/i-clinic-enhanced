@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\MedicalRecord;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class MedicalRecordController extends Controller
 {
@@ -12,19 +14,21 @@ class MedicalRecordController extends Controller
      */
     public function index()
     {
-        $records = MedicalRecord::all(); // Retrieve all medical records
+        $records = MedicalRecord::all();
         return view('medical_records.index', ["records" => $records]);
     }
-
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('medical_records.create'); // Return a view for creating a record
+        return view('medical_records.create');
     }
 
+    /**
+     * Store a newly created record in storage.
+     */
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -33,14 +37,14 @@ class MedicalRecordController extends Controller
             'contact' => 'required|string|max:255',
             'medical_history' => 'required|string',
             'doctor' => 'nullable|string|max:255',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image
+            'image' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:2048',
         ]);
 
         if ($request->hasFile('image')) {
             $file = $request->file('image');
-            $fileName = time() . '_' . $file->getClientOriginalName();
-            $filePath = $file->storeAs('uploads', $fileName, 'public'); // Save in public/uploads
-            $validatedData['image'] = $filePath; // Save the file path
+            $fileName = Str::uuid() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('secure_uploads', $fileName); // disimpan dalam storage/app/secure_uploads
+            $validatedData['image'] = $fileName;
         }
 
         MedicalRecord::create($validatedData);
@@ -48,20 +52,18 @@ class MedicalRecordController extends Controller
         return redirect()->route('medical_records.index')->with('success', 'Record added successfully!');
     }
 
-    public function show(MedicalRecord $medicalRecord)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      */
     public function edit($id)
     {
-        $record = MedicalRecord::findOrFail($id); // Find the record by ID
+        $record = MedicalRecord::findOrFail($id);
         return view('medical_records.edit', compact('record'));
     }
 
+    /**
+     * Update the specified resource in storage.
+     */
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
@@ -70,21 +72,21 @@ class MedicalRecordController extends Controller
             'contact' => 'required|string|max:255',
             'medical_history' => 'required|string',
             'doctor' => 'nullable|string|max:255',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:2048',
         ]);
 
         $record = MedicalRecord::findOrFail($id);
 
         if ($request->hasFile('image')) {
-            // Delete old image if it exists
-            if ($record->image && file_exists(public_path('storage/' . $record->image))) {
-                unlink(public_path('storage/' . $record->image));
+            // Delete old file
+            if ($record->image && Storage::exists('secure_uploads/' . $record->image)) {
+                Storage::delete('secure_uploads/' . $record->image);
             }
 
             $file = $request->file('image');
-            $fileName = time() . '_' . $file->getClientOriginalName();
-            $filePath = $file->storeAs('uploads', $fileName, 'public');
-            $validatedData['image'] = $filePath;
+            $fileName = Str::uuid() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('secure_uploads', $fileName);
+            $validatedData['image'] = $fileName;
         }
 
         $record->update($validatedData);
@@ -92,13 +94,34 @@ class MedicalRecordController extends Controller
         return redirect()->route('medical_records.index')->with('success', 'Record updated successfully!');
     }
 
-
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy($id)
     {
         $record = MedicalRecord::findOrFail($id);
+
+        // Delete file if exists
+        if ($record->image && Storage::exists('secure_uploads/' . $record->image)) {
+            Storage::delete('secure_uploads/' . $record->image);
+        }
+
         $record->delete();
 
         return redirect()->route('medical_records.index')->with('success', 'Record deleted successfully!');
     }
 
+    /**
+     * Secure download method
+     */
+    public function download($filename)
+    {
+        $path = storage_path('app/secure_uploads/' . $filename);
+
+        if (!file_exists($path)) {
+            abort(404);
+        }
+
+        return response()->download($path);
+    }
 }
