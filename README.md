@@ -14,7 +14,7 @@ The i-Clinic website is designed to facilitate healthcare delivery and offer a m
 
 
 (**Khaleel**)
-# **Part Authentication**
+# **Authentication**
 
 1- Password Hashing
 We used Laravel's built-in system to securely hash all user passwords before storing them in the database. This ensures that even if the database is compromised, no one can read the real passwords.
