@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Announcement;
+use Illuminate\Support\Facades\Log;
 
 class NewsController
 {
@@ -29,14 +30,20 @@ class NewsController
             'address' => 'required|string|max:500',
         ]);
 
-        // Save the data into the announcements table
-        Announcement::create($validated);
+        try {
+            // Save the data into the announcements table
+            Announcement::create($validated);
 
-        // Redirect back with a success message
-        return redirect()->route('news')->with('success', 'Information submitted successfully!');
+            // Redirect back with a success message
+            Log::info("Successfully create news", ["news_data" => $request->all()]);
+            return redirect()->route('news')->with('success', 'Information submitted successfully!');
+        } catch (\Exception $e) {
+            Log::error("Failed to create news", ["news_data" => $$request->all(), "error" => $e->getMessage()]);
+        }
     }
 
-    public function news_form() {
+    public function news_form()
+    {
         return view("news.news-form");
     }
 }

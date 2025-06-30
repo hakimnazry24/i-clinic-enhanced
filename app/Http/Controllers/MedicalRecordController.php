@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\MedicalRecord;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class MedicalRecordController
 {
@@ -36,16 +37,23 @@ class MedicalRecordController
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image
         ]);
 
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $fileName = time() . '_' . $file->getClientOriginalName();
-            $filePath = $file->storeAs('uploads', $fileName, 'public'); // Save in public/uploads
-            $validatedData['image'] = $filePath; // Save the file path
+        try {
+
+            if ($request->hasFile('image')) {
+                $file = $request->file('image');
+                $fileName = time() . '_' . $file->getClientOriginalName();
+                $filePath = $file->storeAs('uploads', $fileName, 'local'); // Save in public/uploads
+                $validatedData['image'] = $filePath; // Save the file path
+            }
+
+            MedicalRecord::create($validatedData);
+
+            Log::info("Successfully create medical record", ["medical_record_data" => $request->all()]);
+            return redirect()->route('medical_records.index')->with('success', 'Record added successfully!');
+        } catch (\Exception $e) {
+            Log::error("Failed to create medical record", ["error" => $$e->getMessage(), "medical_record_data" => $request->all()]);
+            return redirect()->back()->with("error", "Failed to create medical record");
         }
-
-        MedicalRecord::create($validatedData);
-
-        return redirect()->route('medical_records.index')->with('success', 'Record added successfully!');
     }
 
     public function show(MedicalRecord $medicalRecord)
@@ -73,32 +81,46 @@ class MedicalRecordController
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $record = MedicalRecord::findOrFail($id);
+        try {
+            $record = MedicalRecord::findOrFail($id);
 
-        if ($request->hasFile('image')) {
-            // Delete old image if it exists
-            if ($record->image && file_exists(public_path('storage/' . $record->image))) {
-                unlink(public_path('storage/' . $record->image));
+            if ($request->hasFile('image')) {
+                // Delete old image if it exists
+                if ($record->image && file_exists(public_path('storage/' . $record->image))) {
+                    unlink(public_path('storage/' . $record->image));
+                }
+
+                $file = $request->file('image');
+                $fileName = time() . '_' . $file->getClientOriginalName();
+                $filePath = $file->storeAs('uploads', $fileName, 'public');
+                $validatedData['image'] = $filePath;
             }
 
-            $file = $request->file('image');
-            $fileName = time() . '_' . $file->getClientOriginalName();
-            $filePath = $file->storeAs('uploads', $fileName, 'public');
-            $validatedData['image'] = $filePath;
+            $record->update($validatedData);
+
+            Log::info("Successfully update medical record", ["medical_record_id" => $id, "medical_record_data" => $request->all()]);
+            return redirect()->route('medical_records.index')->with('success', 'Record updated successfully!');
+        } catch (\Exception $e) {
+            Log::error("Failed to update medical record", ["error" => $e->getMessage(), "medical_record_data" => $request->all()]);
+            return redirect()->back()->with("error", "Failed to update medical record");
         }
-
-        $record->update($validatedData);
-
-        return redirect()->route('medical_records.index')->with('success', 'Record updated successfully!');
     }
 
 
     public function destroy($id)
     {
-        $record = MedicalRecord::findOrFail($id);
-        $record->delete();
 
-        return redirect()->route('medical_records.index')->with('success', 'Record deleted successfully!');
+        try {
+            $record = MedicalRecord::findOrFail($id);
+            $record->delete();
+
+            Log::info("Successfully delete medical record", ["medical_record_id" => $id]);
+            return redirect()->route('medical_records.index')->with('success', 'Record deleted successfully!');
+        } catch (\Exception $e) {
+            Log::error("Failed to delete medical record", ["error" => $e->getMessage(), "medical_record_id" => $id]);
+            return redirect()->back()->with("error", "Failed to delete medical record");
+        }
+
     }
 
 }

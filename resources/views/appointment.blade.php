@@ -27,6 +27,11 @@
                     {{ session('success') }}
                 </div>
             @endif
+            @if (session('error'))
+            <div class="alert alert-warning">
+                {{ session('error') }}
+            </div>
+        @endif
 
             <div class="row">
                 <div class="col-md-12 form-group">
