@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Announcement;
 
-class NewsController extends Controller
+class NewsController
 {
     /**
      * Display the form or list of announcements.
