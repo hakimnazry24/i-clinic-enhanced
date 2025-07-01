@@ -27,6 +27,30 @@ During registration, users must use strong passwords that meet security requirem
 5- Input Validation
 We ensured that all user input during registration is properly validated, so only clean and correct data is saved into the system.
 
+**Files/Code**
+- app/Actions/Fortify/CreateNewUser.php
+php
+use Illuminate\Support\Facades\Hash;
+...
+return User::create([
+    'name' => $input['name'],
+    'email' => $input['email'],
+    'password' => Hash::make($input['password']),
+    'role' => 'patient',
+]);
+
+
+- database/migrations/xxxx_xx_xx_add_role_to_users_table.php
+php
+Schema::table('users', function (Blueprint $table) {
+    $table->string('role')->default('patient');
+});
+
+- env File
+SESSION_SECURE_COOKIE=true
+SESSION_HTTP_ONLY=true
+SESSION_SAME_SITE=strict
+
 # **Authorization**
 
 1- Custom Role Middleware
@@ -40,4 +64,46 @@ We registered the custom middleware in the Laravel system so it can be used acro
 
 4- Tested Role Access
 We tested the system by logging in as different roles (admin, doctor, patient) to confirm that each role can only access its allowed pages.
+
+**Files/Code**
+- app/Http/Middleware/RoleMiddleware.php
+php
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+class RoleMiddleware
+{
+    public function handle(Request $request, Closure $next, $role)
+    {
+        if (!Auth::check() || Auth::user()->role !== $role) {
+            abort(403, 'Unauthorized access.');
+        }
+
+        return $next($request);
+    }
+}
+- app/Http/Kernel.php
+Edit
+protected $routeMiddleware = [
+    ...
+    'role' => \App\Http\Middleware\RoleMiddleware::class
+];
+
+
+- routes/web.php
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/admin/dashboard', function () {
+        return view('admin.dashboard');
+    });
+});
+
+Route::middleware(['auth', 'role:doctor'])->group(function () {
+    Route::get('/doctor/dashboard', function () {
+        return view('doctor.dashboard');
+    });
+});
+
 
