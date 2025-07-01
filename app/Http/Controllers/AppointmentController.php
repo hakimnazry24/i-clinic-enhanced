@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AppointmentRequest;
+use Purifier;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
@@ -15,8 +17,10 @@ class AppointmentController
      */
     public function index()
     {
-        $appointments = DB::table('appointments')->orderBy('date', 'asc')->get();
+        // pull all appointments in date order
+        $appointments = Appointment::orderBy('date', 'asc')->get();
 
+        // render the view with the data
         return view('appointment', compact('appointments'));
     }
 
@@ -25,67 +29,44 @@ class AppointmentController
      */
     public function create()
     {
-        //
+        // pull all appointments in date order to display above the form
+        $appointments = Appointment::orderBy('date', 'asc')->get();
+
+        // render the view with the form and list
+        return view('appointment', compact('appointments'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AppointmentRequest $request)
     {
 
         try {
-            $appointment = new Appointment();
-            $appointment->name = $request->name;
-            $appointment->matric_id = $request->matric_id;
-            $appointment->email = $request->email;
-            $appointment->phone_no = $request->phone_no;
-            $appointment->date = $request->date;
-            $appointment->department = $request->department;
-            $appointment->doctor = $request->doctor;
-            $appointment->message = $request->message;
+            // Only validated data is returned here
+            $data = $request->validated();
 
-            $appointment->created_at = today();
-            $appointment->updated_at = today();
-            $appointment->save();
+            // sanitize the message field to prevent XSS
+            $data['message'] = Purifier::clean($data['message'] ?? '');
 
-            Log::info("Successfully create appointment", ["appointment_data" => $request->all()]);
-            return redirect('appointment')->with("success", "Successfully create appointment");
+
+            // mass-assign (Appointment::$fillable must include these fields)
+            Appointment::create($data);
+
+            Log::info('Successfully created appointment', ['data' => $data]);
+
+            return redirect()
+                   ->route('appointment.index')
+                   ->with('success', 'Successfully created appointment');
         } catch (\Exception $e) {
-            Log::error("Failed to create appointment", ["errors" => $e->getMessage(), "appointment_data" => $request->all()]);
-            return redirect("appointment")->with("error", "Failed to create appointment");
+            Log::error('Failed to create appointment', [
+                'error' => $e->getMessage(),
+                'data'  => $request->all(),
+            ]);
+
+            return redirect()
+                   ->route('appointment.index')
+                   ->with('error', 'Failed to create appointment');
         }
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }
