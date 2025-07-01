@@ -51,6 +51,11 @@
                     alert("Your appointment has been submitted. Please check your mail for details");
                 </script>
             @endif
+            @if (session('error'))
+            <div class="alert alert-warning">
+                {{ session('error') }}
+            </div>
+        @endif
 
             <div class="row">
                 <div class="col-md-12 form-group">

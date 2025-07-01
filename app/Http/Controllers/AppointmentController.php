@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AppointmentRequest;
+use Purifier;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use App\Models\Appointment;
 use Illuminate\Support\Facades\Log;
-use Purifier;
 
-class AppointmentController extends Controller
+class AppointmentController
 {
     /**
      * Display a listing of the resource.
@@ -38,12 +41,14 @@ class AppointmentController extends Controller
      */
     public function store(AppointmentRequest $request)
     {
+
         try {
             // Only validated data is returned here
             $data = $request->validated();
 
             // sanitize the message field to prevent XSS
             $data['message'] = Purifier::clean($data['message'] ?? '');
+
 
             // mass-assign (Appointment::$fillable must include these fields)
             Appointment::create($data);
