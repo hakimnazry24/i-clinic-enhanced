@@ -12,7 +12,7 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
           {{-- Appointment List (escaped) --}}
-          @if(isset($appointments) && $appointments->isNotEmpty())
+          {{-- @if(isset($appointments) && $appointments->isNotEmpty())
             <div class="appointment-list mb-5">
               <h3 class="mb-3">Your Appointments</h3>
               @foreach($appointments as $appt)
@@ -28,7 +28,7 @@
                 </div>
               @endforeach
             </div>
-          @endif
+          @endif --}}
 
           <form action="{{ route('appointment.store') }}" method="post" role="form">
             @csrf
