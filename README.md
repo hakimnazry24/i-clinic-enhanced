@@ -4,6 +4,7 @@
 
 1. MUHAMMAD HAKIM BIN MD NAZRI 2110457
 2. AHMAD KAHLEEL 1927975
+3. MUHAMMAD IQBAL AS SUFI BIN MAHAMAD A'SIM 2124165
 
 # **INTRODUCTION**
 
@@ -107,3 +108,71 @@ Route::middleware(['auth', 'role:doctor'])->group(function () {
 });
 
 
+
+(IQBAL)
+##  Database Security
+1. **Replaced Root with Limited DB User**
+   - Created a new MySQL user `admin` with limited permissions.
+   - Avoids using the default `root` user for security reasons.
+
+2. **Limited Database Privileges**
+   - The `admin` user only has:
+     - `SELECT`
+     - `INSERT`
+     - `UPDATE`
+     - `DELETE`
+   - Prevents access to commands like `DROP`, `GRANT`, or `ALTER`.
+
+3. **Updated `.env` Credentials**
+    DB_USERNAME=admin
+    DB_PASSWORD=securepassword123
+   - Ensures secure, non-root credentials are used in production.
+   - Code:
+   - DB_CONNECTION=mysql
+     DB_HOST=127.0.0.1
+     DB_PORT=3306
+     DB_DATABASE=i-clinic
+     DB_USERNAME=admin
+     DB_PASSWORD=securepassword123
+
+     
+4. **SQL Injection Protection**
+- All database interactions use **Eloquent ORM** or **Laravel Query Builder**, which automatically uses prepared statements.
+- $user = User::where('email', $request->email)->first();
+
+
+##  File Security
+
+1. **Secure File Storage Location**
+- Uploaded files are stored in `storage/app/secure_uploads`, which is **not publicly accessible** via URL.
+- Code: MedicalRecordController.php
+- $file->storeAs('secure_uploads', $fileName);
+
+
+2. **Upload Validation**
+- Ensures only valid file types and sizes are accepted:
+  - MIME types: `jpeg`, `jpg`, `png`, `gif`, `pdf`
+  - Maximum size: `2MB`
+  - Code: MedicalRecordController.php store() and update():
+  - $request->validate([
+    'image' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:2048',
+]);
+
+3. **Filename Obfuscation**
+- Uploaded files are renamed using UUID to prevent guessing or overwriting:
+-Code: MedicalRecordController.php store() and update():
+-$fileName = Str::uuid() . '.' . $file->getClientOriginalExtension();
+  
+
+4. **Controlled Access for Downloads**
+- Files are only accessible via a Laravel controller method (`download()`), not through a direct URL.
+- Code: MedicalRecordController.php download():
+- public function download($filename)
+{
+    $path = storage_path('app/secure_uploads/' . $filename);
+    if (!file_exists($path)) abort(404);
+    return response()->download($path);
+}
+ 
+
+---
