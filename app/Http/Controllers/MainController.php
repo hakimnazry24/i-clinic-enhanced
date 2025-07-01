@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\MedicalRecord;
 
-class MainController extends Controller
+class MainController
 {
     public function index()
     {

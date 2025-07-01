@@ -11,6 +11,8 @@ Route::get('/', function () {
     return view('mainpage');
 })->name("home");
 
+Route::get('/medical-records/download/{filename}', [MedicalRecordController::class, 'download'])->name('medical_records.download');
+
 // feedback route
 Route::get("/feedback", [FeedbackController::class, "index"])->name("feedback.index");
 Route::post("/feedback", [FeedbackController::class, "store"])->name("feedback.store");

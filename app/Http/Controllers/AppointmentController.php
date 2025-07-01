@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use App\Models\Appointment;
+use Illuminate\Support\Facades\Log;
 
-class AppointmentController extends Controller
+class AppointmentController
 {
     /**
      * Display a listing of the resource.
@@ -31,20 +33,28 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        $appointment = new Appointment();
-        $appointment->name=$request->name;
-        $appointment->matric_id=$request->matric_id;
-        $appointment->email=$request->email;
-        $appointment->phone_no=$request->phone_no;
-        $appointment->date=$request->date;
-        $appointment->department=$request->department;
-        $appointment->doctor=$request->doctor;
-        $appointment->message=$request->message;
 
-        $appointment->created_at=today();
-        $appointment->updated_at=today();
-        $appointment->save();
-        return redirect('appointment');
+        try {
+            $appointment = new Appointment();
+            $appointment->name = $request->name;
+            $appointment->matric_id = $request->matric_id;
+            $appointment->email = $request->email;
+            $appointment->phone_no = $request->phone_no;
+            $appointment->date = $request->date;
+            $appointment->department = $request->department;
+            $appointment->doctor = $request->doctor;
+            $appointment->message = $request->message;
+
+            $appointment->created_at = today();
+            $appointment->updated_at = today();
+            $appointment->save();
+
+            Log::info("Successfully create appointment", ["appointment_data" => $request->all()]);
+            return redirect('appointment')->with("success", "Successfully create appointment");
+        } catch (\Exception $e) {
+            Log::error("Failed to create appointment", ["errors" => $e->getMessage(), "appointment_data" => $request->all()]);
+            return redirect("appointment")->with("error", "Failed to create appointment");
+        }
     }
 
     /**
