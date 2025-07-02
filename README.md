@@ -23,7 +23,7 @@ The i-Clinic website is designed to facilitate healthcare delivery and offer a m
 
 | Metric                          | Value                                     |
 |--------------------------------|-------------------------------------------|
-| Total Issues Identified        | 17                                        |
+| Total Issues Identified        | 23                                        |
 | Critical Issues                | 0                                        |
 | High-Risk Issues               | 1                                         |
 | Medium-Risk Issues             | 22                                         |
