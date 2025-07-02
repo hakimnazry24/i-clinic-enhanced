@@ -31,26 +31,28 @@ We ensured that all user input during registration is properly validated, so onl
 - app/Actions/Fortify/CreateNewUser.php
 php
 use Illuminate\Support\Facades\Hash;
-...
+```php
 return User::create([
     'name' => $input['name'],
     'email' => $input['email'],
     'password' => Hash::make($input['password']),
     'role' => 'patient',
 ]);
+```
 
 
 - database/migrations/xxxx_xx_xx_add_role_to_users_table.php
-php
+```php
 Schema::table('users', function (Blueprint $table) {
     $table->string('role')->default('patient');
 });
-
+```
 - env File
+```php
 SESSION_SECURE_COOKIE=true
 SESSION_HTTP_ONLY=true
 SESSION_SAME_SITE=strict
-
+```
 # **Authorization**
 
 1- Custom Role Middleware
@@ -67,7 +69,7 @@ We tested the system by logging in as different roles (admin, doctor, patient) t
 
 **Files/Code**
 - app/Http/Middleware/RoleMiddleware.php
-php
+```php
 namespace App\Http\Middleware;
 
 use Closure;
@@ -85,8 +87,11 @@ class RoleMiddleware
         return $next($request);
     }
 }
+```
+
 - app/Http/Kernel.php
 Edit
+```php
 protected $routeMiddleware = [
     ...
     'role' => \App\Http\Middleware\RoleMiddleware::class
@@ -105,5 +110,5 @@ Route::middleware(['auth', 'role:doctor'])->group(function () {
         return view('doctor.dashboard');
     });
 });
-
+```
 
