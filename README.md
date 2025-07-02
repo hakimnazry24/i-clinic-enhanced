@@ -140,9 +140,9 @@ Route::middleware(['auth', 'role:doctor'])->group(function () {
 | Risk Level | Number of Issues | Example Vulnerability                    |
 |------------|------------------|------------------------------------------|
 | Critical   | 0                | -                                        |
-| High       | 0                | -                                        |
-| Medium     | 6                | Absence of Anti-CSRF Tokens, Content Security Policy (CSP) Header Not Set |
-| Low        | 10                | Cookie No HttpOnly Flag, Cookie without SameSite Attribute, Server Leaks Version Information via "Server" HTTP Response Header Field |
-| Info       | 1                | Session Management Response Identified |
+| High       | 1                | SQL injection                                        |
+| Medium     | 22                | Content Security Policy (CSP) header not set, missing Anti-clickjacking header |
+| Low        | 109                | Cookie no Httponly flag, Cross-Domain Javascript source file inclusion, Server leaks information via "X-Powered-By" HTTP Response Header Field, X-Content-Type-Options Header Missing |
+| Info       | 0                | - |
 
 ---
