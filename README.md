@@ -4,6 +4,7 @@
 1. Muhammad Hakim Bin Md Nazri 2110457
 2. Ahmad Kahleel 1927975
 3. Muhammad Iqbal As Sufi bin Mahamad A'sim 2124165
+4. Muhammad Fadly 2117999
 
 
 # **INTRODUCTION**
@@ -115,6 +116,45 @@ The i-Clinic website is designed to facilitate healthcare delivery and offer a m
   - Test CSP in Content-Security-Policy-Report-Only mode before enforcing
   - Monitor CSP violation reports to detect potential threats
   - Regularly review and update the policy as your application changes
+
+> **Responsible Team:** Development team  
+> **Target Remediation Date:** 30 July 2025
+
+---
+
+### Missing Anti-clickjacking Header
+
+- **Severity:** Medium
+
+- **Description:** The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.
+
+- **Affected URLs:**
+  - http://localhost:8000
+  - http://localhost:8000/
+  - http://localhost:8000/appointment
+  - http://localhost:8000/appointment/create
+  - http://localhost:8000/feedback
+  - http://localhost:8000/forgot-password
+  - http://localhost:8000/login
+  - http://localhost:8000/news
+  - http://localhost:8000/news-form
+
+- **Business Impact:**
+  - Clickjacking Attacks – Users can be tricked into clicking hidden buttons or links
+  - Unauthorized Actions – Attackers may perform unintended actions on behalf of users
+  - Loss of User Trust – Compromised UI can reduce user confidence in your platform
+
+- **OWASP Reference:** [https://owasp.org/www-community/attacks/Clickjacking](https://owasp.org/www-community/attacks/Clickjacking)
+
+- **Recommendation:** Set the X-Frame-Options or Content-Security-Policy: frame-ancestors header to restrict your site from being embedded in iframes by unauthorized domains.
+
+- **Prevention Strategy:**
+  - Set the X-Frame-Options header to DENY or SAMEORIGIN
+  - Use the Content-Security-Policy header with the frame-ancestors directive
+  - Avoid embedding sensitive pages in iframes
+  - Regularly audit and test iframe usage across your application
+  - Educate developers on clickjacking risks and secure header implementation
+  - Monitor security headers using automated tools or browser extensions
 
 > **Responsible Team:** Development team  
 > **Target Remediation Date:** 30 July 2025
@@ -424,3 +464,66 @@ Route::middleware(['auth', 'role:doctor'])->group(function () {
  
 
 ---
+
+
+(Fadly)
+
+##Input Validation
+1. **Generate FormRequest for Appointments**
+2. **Adding the rules and messages**
+`<?php`
+
+`namespace App\Http\Controllers;`
+
+`use App\Http\Requests\AppointmentRequest;  // 1. Import FormRequest
+use App\Models\Appointment;
+use Illuminate\Support\Facades\Log;
+use Purifier;`
+
+`class AppointmentController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {`
+        `$appointments = Appointment::orderBy('date', 'asc')->get();`
+
+        // render the view with the data
+        return view('appointment', compact('appointments'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(AppointmentRequest $request)
+    {
+        try {
+            // Only validated data is returned here
+            $data = $request->validated();
+
+            // sanitize the message field to prevent XSS
+            $data['message'] = Purifier::clean($data['message'] ?? '');
+
+            // mass-assign (Appointment::$fillable must include these fields)
+            Appointment::create($data);
+
+            Log::info('Successfully created appointment', ['data' => $data]);
+
+            return redirect()
+                   ->route('appointment.index')
+                   ->with('success', 'Successfully created appointment');
+        } catch (\Exception $e) {
+            Log::error('Failed to create appointment', [
+                'error' => $e->getMessage(),
+                'data'  => $request->all(),
+            ]);
+
+            return redirect()
+                   ->route('appointment.index')
+                   ->with('error', 'Failed to create appointment');
+        }
+    }
+`}`
+
+3. **Adding XSS and CSRF Token**
