@@ -146,3 +146,33 @@ Route::middleware(['auth', 'role:doctor'])->group(function () {
 | Info       | 0                | - |
 
 ---
+## 3. Detailed Findings
+
+### SQL Injection
+
+- **Severity:** High
+
+- **Description:** SQL Injection is a security vulnerability that allows an attacker to interfere with the queries an application makes to its database. It happens when untrusted input is inserted into a SQL query without proper validation or escaping, allowing attackers to view, modify, or delete data they shouldn't have access to.
+
+- **Affected URLs:**
+  - http://localhost:8000/login
+
+- **Business Impact:**
+  - Data Breach – Unauthorized access to sensitive customer or company data.
+  - Financial Loss – Potential theft, fraud, and cost of remediation.
+
+- **OWASP Reference:** [https://owasp.org/www-community/attacks/SQL_Injection](https://owasp.org/www-community/attacks/SQL_Injection)
+
+- **Recommendation:** To prevent SQL injection, use prepared statements, ORM frameworks, sanitize and validate inputs, apply the least privilege principle, use web application firewalls, perform regular security testing, and keep software up to date.
+
+- **Prevention Strategy:**
+  - Use prepared statements (parameterized queries)
+  - Employ ORM frameworks to handle database operations safely
+  - Sanitize and validate all user inputs
+  - Enforce the principle of least privilege for database access
+  - Implement web application firewalls (WAFs)
+  - Conduct regular security testing and code reviews
+  - Keep all software and dependencies up to date
+
+> **Responsible Team:** Development team, database administrator
+> **Target Remediation Date:** 15 July 2025
