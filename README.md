@@ -174,5 +174,128 @@ Route::middleware(['auth', 'role:doctor'])->group(function () {
   - Conduct regular security testing and code reviews
   - Keep all software and dependencies up to date
 
-> **Responsible Team:** Development team, database administrator
+> **Responsible Team:** Development team, database administrator  
 > **Target Remediation Date:** 15 July 2025
+
+---
+
+### Content Security Policy (CSP) Header Not Set
+
+- **Severity:** Medium
+
+- **Description:** Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page — covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.
+
+- **Affected URLs:**
+  - http://localhost:8000
+  - http://localhost:8000/
+  - http://localhost:8000/appointment
+  - http://localhost:8000/appointment/assets/img/logo.png
+  - http://localhost:8000/appointment/create
+  - http://localhost:8000/appointment/index.html
+  - http://localhost:8000/feedback
+  - http://localhost:8000/forgot-password
+  - http://localhost:8000/index.html
+  - http://localhost:8000/login
+  - http://localhost:8000/news
+  - http://localhost:8000/news-form
+  - http://localhost:8000/sitemap.xml
+
+- **Business Impact:**
+  - Increased Risk of XSS Attacks – Allows attackers to inject malicious scripts into your website
+  - Data Theft – Sensitive customer or business data can be stolen through malicious scripts
+
+- **OWASP Reference:** [https://owasp.org/www-community/controls/Content_Security_Policy](https://owasp.org/www-community/controls/Content_Security_Policy)
+
+- **Recommendation:** To mitigate risks from missing CSP headers, define a strong Content-Security-Policy that restricts resource loading to trusted sources, avoid unsafe directives, test in report-only mode, and continuously monitor and update the policy.
+
+- **Prevention Strategy:**
+  - Set the Content-Security-Policy HTTP header in server responses
+  - Allow only trusted domains for scripts, styles, images, and other resources
+  - Avoid using unsafe-inline and unsafe-eval in the policy
+  - Use nonces or hashes for inline scripts when necessary
+  - Test CSP in Content-Security-Policy-Report-Only mode before enforcing
+  - Monitor CSP violation reports to detect potential threats
+  - Regularly review and update the policy as your application changes
+
+> **Responsible Team:** Development team  
+> **Target Remediation Date:** 30 July 2025
+
+---
+
+### Missing Anti-clickjacking Header
+
+- **Severity:** Medium
+
+- **Description:** The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.
+
+- **Affected URLs:**
+  - http://localhost:8000
+  - http://localhost:8000/
+  - http://localhost:8000/appointment
+  - http://localhost:8000/appointment/create
+  - http://localhost:8000/feedback
+  - http://localhost:8000/forgot-password
+  - http://localhost:8000/login
+  - http://localhost:8000/news
+  - http://localhost:8000/news-form
+
+- **Business Impact:**
+  - Clickjacking Attacks – Users can be tricked into clicking hidden buttons or links
+  - Unauthorized Actions – Attackers may perform unintended actions on behalf of users
+  - Loss of User Trust – Compromised UI can reduce user confidence in your platform
+
+- **OWASP Reference:** [https://owasp.org/www-community/attacks/Clickjacking](https://owasp.org/www-community/attacks/Clickjacking)
+
+- **Recommendation:** Set the X-Frame-Options or Content-Security-Policy: frame-ancestors header to restrict your site from being embedded in iframes by unauthorized domains.
+
+- **Prevention Strategy:**
+  - Set the X-Frame-Options header to DENY or SAMEORIGIN
+  - Use the Content-Security-Policy header with the frame-ancestors directive
+  - Avoid embedding sensitive pages in iframes
+  - Regularly audit and test iframe usage across your application
+  - Educate developers on clickjacking risks and secure header implementation
+  - Monitor security headers using automated tools or browser extensions
+
+> **Responsible Team:** Development team  
+> **Target Remediation Date:** 30 July 2025
+
+---
+
+### Missing Anti-clickjacking Header
+
+- **Severity:** Medium
+
+- **Description:** The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.
+
+- **Affected URLs:**
+  - http://localhost:8000
+  - http://localhost:8000/
+  - http://localhost:8000/appointment
+  - http://localhost:8000/appointment/create
+  - http://localhost:8000/feedback
+  - http://localhost:8000/forgot-password
+  - http://localhost:8000/login
+  - http://localhost:8000/news
+  - http://localhost:8000/news-form
+
+- **Business Impact:**
+  - Clickjacking Attacks – Users can be tricked into clicking hidden buttons or links
+  - Unauthorized Actions – Attackers may perform unintended actions on behalf of users
+  - Loss of User Trust – Compromised UI can reduce user confidence in your platform
+
+- **OWASP Reference:** [https://owasp.org/www-community/attacks/Clickjacking](https://owasp.org/www-community/attacks/Clickjacking)
+
+- **Recommendation:** Set the X-Frame-Options or Content-Security-Policy: frame-ancestors header to restrict your site from being embedded in iframes by unauthorized domains.
+
+- **Prevention Strategy:**
+  - Set the X-Frame-Options header to DENY or SAMEORIGIN
+  - Use the Content-Security-Policy header with the frame-ancestors directive
+  - Avoid embedding sensitive pages in iframes
+  - Regularly audit and test iframe usage across your application
+  - Educate developers on clickjacking risks and secure header implementation
+  - Monitor security headers using automated tools or browser extensions
+
+> **Responsible Team:** Development team  
+> **Target Remediation Date:** 30 July 2025
+
+---
