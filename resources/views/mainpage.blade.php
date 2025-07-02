@@ -18,7 +18,7 @@
                 <div class="content row gy-4">
                     <div class="col-lg-4 d-flex align-items-stretch">
                         <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
-                            <h3>Why Choose Medilab?</h3>
+                            <h3>Why Choose i-Clinic?</h3>
                             <p>
                                 At i-Clinic, we combine expert medical care, personalized treatment plans, and
                                 state-of-the-art facilities to ensure your health and well-being are our top priorities.
