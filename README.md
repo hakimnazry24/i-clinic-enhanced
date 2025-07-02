@@ -199,6 +199,31 @@ The i-Clinic website is designed to facilitate healthcare delivery and offer a m
 
 ---
 
+# Logging - Muhammad Hakim (2110457)
+Logging was implemented in the i-Clinic web application by using Log facade. The purpose of logging is to monitor system activities and to record anomalies that happen within the system. For example, in the case of unsuccessful appointment booking, logging can help to record error stacks and specify the problem that causes it. Two types of logging was implemented in the application, error logging and info logging. Error logging is used to record error that happen within the system such as failed transaction, unsuccessful form submission and failed request. Info logging is used to record successful operation within the system such as successful transaction, successful databaes manipulation and many more. All log messages are recorded in _storage/logs/laravel.log_. The code below shows implementation of error and info logging.
+
+Error logging
+```php
+use Illuminate\Support\Facades\Log;
+
+try {
+    // operations
+} catch (\Exception $e) {
+    Log::error("Failed to update user, ["user_id" => $id, "request_data" => $request->all()]);
+}
+```
+
+Info logging
+```php
+use Illuminate\Support\Facades\Log;
+
+try {
+    // operations
+} catch (\Exception $e) {
+    Log::info("Update user successful, ["user_id" => $id, "request_data" => $request->all()]);
+}
+```
+
 (**Khaleel**)
 # **Authentication - Ahmad Kahleel (1927975)**
 
@@ -244,30 +269,6 @@ SESSION_HTTP_ONLY=true
 SESSION_SAME_SITE=strict
 ```
 
-# Logging - Muhammad Hakim (2110457)
-Logging was implemented in the i-Clinic web application by using Log facade. The purpose of logging is to monitor system activities and to record anomalies that happen within the system. For example, in the case of unsuccessful appointment booking, logging can help to record error stacks and specify the problem that causes it. Two types of logging was implemented in the application, error logging and info logging. Error logging is used to record error that happen within the system such as failed transaction, unsuccessful form submission and failed request. Info logging is used to record successful operation within the system such as successful transaction, successful databaes manipulation and many more. All log messages are recorded in _storage/logs/laravel.log_. The code below shows implementation of error and info logging.
-
-Error logging
-```php
-use Illuminate\Support\Facades\Log;
-
-try {
-    // operations
-} catch (\Exception $e) {
-    Log::error("Failed to update user, ["user_id" => $id, "request_data" => $request->all()]);
-}
-```
-
-Info logging
-```php
-use Illuminate\Support\Facades\Log;
-
-try {
-    // operations
-} catch (\Exception $e) {
-    Log::info("Update user successful, ["user_id" => $id, "request_data" => $request->all()]);
-}
-```
 # **Authorization - Ahmad Kahleel (1927975)**
 
 1- Custom Role Middleware
