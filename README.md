@@ -2,15 +2,15 @@
 
 ## **TEAM MEMBERS**
 
-1. MUHAMMAD HAKIM BIN MD NAZRI 2110457
-2. AHMAD KAHLEEL 1927975
+1. Muhammad Hakim Bin Md Nazri 2110457
+2. Ahmad Kahleel 1927975
 
 # **INTRODUCTION**
 
 The i-Clinic website is designed to facilitate healthcare delivery and offer a more convenient service to the students, staffs and patients. Previously, patients needed to walk in and often waited for long periods to receive treatment. Patients were also challenged to obtain timely information, such as about doctors' unavailability. Moreover, patient data was not recorded correctly since they had to do so through Google forms without a procedure to record the history of treatments for a subsequent use.This website aims to address these challenges. It consists of a clinically relevant, web-based scheduling and appointment which is accessible to patients for booking, rescheduling, and cancelling appointments. An effective medical record management system, which will secure access and update for patients as well as clinic staff. The website will have a billing and payment system in order to facilitate payment of bills easily, and it will ensure the timely information concerning the operations of clinic, hours of operation, and news. The aim of this project is to optimize clinic work processes as well as decrease waiting times and provide a more structured, reliable health service.
 
 (**Khaleel**)
-# **Authentication - AHMAD KAHLEEL (1927975)**
+# **Authentication - Ahmad Kahleel (1927975)**
 
 1- Password Hashing
 We used Laravel's built-in system to securely hash all user passwords before storing them in the database. This ensures that even if the database is compromised, no one can read the real passwords.
@@ -53,7 +53,7 @@ SESSION_SECURE_COOKIE=true
 SESSION_HTTP_ONLY=true
 SESSION_SAME_SITE=strict
 ```
-# **Authorization - AHMAD KAHLEEL (1927975)**
+# **Authorization - Ahmad Kahleel (1927975)**
 
 1- Custom Role Middleware
 We created a custom middleware to check a user's role before allowing access to specific pages. For example, only an admin can access the admin dashboard.
@@ -111,4 +111,38 @@ Route::middleware(['auth', 'role:doctor'])->group(function () {
     });
 });
 ```
+# **Vulnerability Report - Muhammad Hakim (2110457)**
+**Tool Used:** OWASP ZAP  
+**Date of Scan:** 2025-07-01  
+**Scanned By:** [Muhammad Hakim Bin Md Nazri]  
+**Target Application:** http://localhost:8000.
+**Scan Type:** Active   
+**Scan Duration:** 5 minutes  
 
+---
+
+## 1. Executive Summary
+
+| Metric                          | Value                                     |
+|--------------------------------|-------------------------------------------|
+| Total Issues Identified        | 17                                        |
+| Critical Issues                | 0                                        |
+| High-Risk Issues               | 1                                         |
+| Medium-Risk Issues             | 22                                         |
+| Low-Risk/Informational Issues |  109                                        |
+| Remediation Status             | Pending                                   |
+| Key Takeaway                   | The scan found no critical or high-risk issues. However, 1 high-risk issue, 22 medium-risk and 109 low-risk issues were identified. |
+
+---
+
+## 2. Summary of Findings
+
+| Risk Level | Number of Issues | Example Vulnerability                    |
+|------------|------------------|------------------------------------------|
+| Critical   | 0                | -                                        |
+| High       | 0                | -                                        |
+| Medium     | 6                | Absence of Anti-CSRF Tokens, Content Security Policy (CSP) Header Not Set |
+| Low        | 10                | Cookie No HttpOnly Flag, Cookie without SameSite Attribute, Server Leaks Version Information via "Server" HTTP Response Header Field |
+| Info       | 1                | Session Management Response Identified |
+
+---
