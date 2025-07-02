@@ -160,45 +160,6 @@ The i-Clinic website is designed to facilitate healthcare delivery and offer a m
 
 ---
 
-### Missing Anti-clickjacking Header
-
-- **Severity:** Medium
-
-- **Description:** The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.
-
-- **Affected URLs:**
-  - http://localhost:8000
-  - http://localhost:8000/
-  - http://localhost:8000/appointment
-  - http://localhost:8000/appointment/create
-  - http://localhost:8000/feedback
-  - http://localhost:8000/forgot-password
-  - http://localhost:8000/login
-  - http://localhost:8000/news
-  - http://localhost:8000/news-form
-
-- **Business Impact:**
-  - Clickjacking Attacks – Users can be tricked into clicking hidden buttons or links
-  - Unauthorized Actions – Attackers may perform unintended actions on behalf of users
-  - Loss of User Trust – Compromised UI can reduce user confidence in your platform
-
-- **OWASP Reference:** [https://owasp.org/www-community/attacks/Clickjacking](https://owasp.org/www-community/attacks/Clickjacking)
-
-- **Recommendation:** Set the X-Frame-Options or Content-Security-Policy: frame-ancestors header to restrict your site from being embedded in iframes by unauthorized domains.
-
-- **Prevention Strategy:**
-  - Set the X-Frame-Options header to DENY or SAMEORIGIN
-  - Use the Content-Security-Policy header with the frame-ancestors directive
-  - Avoid embedding sensitive pages in iframes
-  - Regularly audit and test iframe usage across your application
-  - Educate developers on clickjacking risks and secure header implementation
-  - Monitor security headers using automated tools or browser extensions
-
-> **Responsible Team:** Development team  
-> **Target Remediation Date:** 30 July 2025
-
----
-
 # Logging - Muhammad Hakim (2110457)
 Logging was implemented in the i-Clinic web application by using Log facade. The purpose of logging is to monitor system activities and to record anomalies that happen within the system. For example, in the case of unsuccessful appointment booking, logging can help to record error stacks and specify the problem that causes it. Two types of logging was implemented in the application, error logging and info logging. Error logging is used to record error that happen within the system such as failed transaction, unsuccessful form submission and failed request. Info logging is used to record successful operation within the system such as successful transaction, successful databaes manipulation and many more. All log messages are recorded in _storage/logs/laravel.log_. The code below shows implementation of error and info logging.
 
