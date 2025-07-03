@@ -245,9 +245,9 @@ We ensured that all user input during registration is properly validated, so onl
 
 **Files/Code**
 - app/Actions/Fortify/CreateNewUser.php
-php
-use Illuminate\Support\Facades\Hash;
 ```php
+use Illuminate\Support\Facades\Hash;
+
 return User::create([
     'name' => $input['name'],
     'email' => $input['email'],
@@ -307,15 +307,16 @@ class RoleMiddleware
 ```
 
 - app/Http/Kernel.php
-Edit
 ```php
 protected $routeMiddleware = [
     ...
     'role' => \App\Http\Middleware\RoleMiddleware::class
 ];
+```
 
 
 - routes/web.php
+```php
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/dashboard', function () {
         return view('admin.dashboard');
