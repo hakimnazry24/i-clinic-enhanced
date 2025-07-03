@@ -51,3 +51,20 @@ Route::middleware([
     Route::get('/dashboard', [MedicalRecordController::class, 'index'])
          ->name('dashboard');
 });
+
+// two factor auth
+Route::get("/two-factor-setting", function() {
+     return view("two-factor-auth");
+})->name("two-factor-setting");
+
+Route::middleware(['auth', 'role:admin'])->group(function () {
+     Route::get('/admin/dashboard', function () {
+         return view('admin.dashboard');
+     });
+ });
+ 
+ Route::middleware(['auth', 'role:doctor'])->group(function () {
+     Route::get('/doctor/dashboard', function () {
+         return view('doctor.dashboard');
+     });
+ });
