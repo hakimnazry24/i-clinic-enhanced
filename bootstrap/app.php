@@ -9,6 +9,7 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
+use Spatie\Csp\AddCspHeaders;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -33,6 +34,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'strip_tags' => \App\Http\Middleware\StripTags::class,
         ]);
+        $middleware->append(AddCspHeaders::class);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

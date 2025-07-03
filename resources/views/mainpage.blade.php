@@ -617,7 +617,7 @@
                     </div>
 
                     <div class="col-lg-8">
-                        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
+                        {{-- <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
                             data-aos-delay="200">
                             <div class="row gy-4">
 
@@ -649,13 +649,10 @@
                                 </div>
 
                             </div>
-                        </form>
+                        </form> --}}
                     </div><!-- End Contact Form -->
-
                 </div>
-
             </div>
-
         </section><!-- /Contact Section -->
 
     </main>

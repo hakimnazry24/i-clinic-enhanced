@@ -78,9 +78,9 @@
                         <li><a href={{ route('news') }}>News and Announcement</a></li>
                         @auth
                         @else
-                        <li>
-                            <a class="" href="{{ route('feedback.index') }}">
-                                Feedback</a>
+                            <li>
+                                <a class="" href="{{ route('feedback.index') }}">
+                                    Feedback</a>
                             </li>
                             <li>
                                 <a class="cta-btn d-none d-sm-block" href="{{ route('make-appointment') }}">Make an
@@ -89,6 +89,7 @@
                         @endauth
                         @auth
                             <li>Welcome, Dr. {{ Auth::user()->name }}</li>
+                            <li><a href="{{ route('two-factor-setting') }}">Two factor settings</a></li>
                             <li>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
