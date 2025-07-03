@@ -4,6 +4,7 @@
 1. Muhammad Hakim Bin Md Nazri 2110457
 2. Ahmad Kahleel 1927975
 3. Muhammad Iqbal As Sufi bin Mahamad A'sim 2124165
+4. Muhammad Fadly 2117999
 
 
 # **INTRODUCTION**
@@ -424,3 +425,124 @@ Route::middleware(['auth', 'role:doctor'])->group(function () {
  
 
 ---
+
+
+### Fadly ###
+## Input Validation
+
+1. Adding Regex to validate late
+```php   
+public function rules(): array
+    {
+        return [
+            'name'       => 'required|string|max:255',
+            'matric_id'  => ['required', 'regex:/^[0-9]+$/', 'max:50'],
+            'email'      => 'required|email|max:255',
+            'phone_no'   => ['required', 'regex:/^[0-9]+$/', 'max:20'],
+            'date'       => 'required|date|after_or_equal:today',
+            'department' => 'required|string|max:100',
+            'doctor'     => 'required|string|max:255',
+            'message'    => 'nullable|string|max:1000',
+        ];
+    }`
+```
+
+
+## XSS and CSRF Prevention
+
+1. Using Purifier to add StripTags and making the output more cleaner
+   ```php
+   class StripTags
+   {
+    /**
+     * Handle an incoming request and strip all HTML tags from input.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function handle(Request $request, Closure $next): Response
+    {
+        // Grab all input data
+        $input = $request->all();
+        // Recursively strip tags from every value
+        array_walk_recursive($input, function (&$value) {
+            if (is_string($value)) {
+                $value = strip_tags($value);
+            }
+        });
+        // Merge sanitized data back into the request
+        $request->merge($input);
+        // Continue handling request
+        return $next($request);
+    }
+   }
+   ```
+   
+2. Adding Purifier to `AppointmentController.php`
+   ```php
+   public function store(AppointmentRequest $request)
+    {
+        try {
+            // Only validated data is returned here
+            $data = $request->validated();
+
+            // sanitize the message field to prevent XSS
+            $data['message'] = Purifier::clean($data['message'] ?? '');
+
+            // mass-assign (Appointment::$fillable must include these fields)
+            Appointment::create($data);
+
+            Log::info('Successfully created appointment', ['data' => $data]);
+
+            return redirect()
+                   ->route('appointment.index')
+                   ->with('success', 'Successfully created appointment');
+        } catch (\Exception $e) {
+            Log::error('Failed to create appointment', [
+                'error' => $e->getMessage(),
+                'data'  => $request->all(),
+            ]);
+
+            return redirect()
+                   ->route('appointment.index')
+                   ->with('error', 'Failed to create appointment');
+        }
+    }
+   ```
+
+3. Adding CSRF Token
+   ```blade
+   <form action="{{ route('appointment.store') }}" method="post" role="form">
+            @csrf
+   ```
+
+4. Adding {{ }} to neutralizing any <script) tags
+   ```blade
+   {{-- Appointment List (escaped) --}}
+          @if(isset($appointments) && $appointments->isNotEmpty())
+            <div class="appointment-list mb-5">
+              <h3 class="mb-3">Your Appointments</h3>
+              @foreach($appointments as $appt)
+                <div class="card p-3 mb-2">
+                  <p><strong>Name:</strong> {{ $appt->name }}</p>
+                  <p><strong>Matric/Staff ID:</strong> {{ $appt->matric_id }}</p>
+                  <p><strong>Email:</strong> {{ $appt->email }}</p>
+                  <p><strong>Phone:</strong> {{ $appt->phone_no }}</p>
+                  <p><strong>Date:</strong> {{ $appt->date }}</p>
+                  <p><strong>Department:</strong> {{ $appt->department }}</p>
+                  <p><strong>Doctor:</strong> {{ $appt->doctor }}</p>
+                  <p><strong>Notes:</strong> {{ $appt->message }}</p>
+                </div>
+              @endforeach
+            </div>
+   ```
+
+5. Adding CSRF Token in the head
+   ```blade
+   <meta name="csrf-token" content="{{ csrf_token() }}">
+   ```
+
+   ---
+
+   
